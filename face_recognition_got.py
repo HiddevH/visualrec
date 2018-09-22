@@ -14,7 +14,7 @@ import face_recognition
 import glob
 import re
 
-cast_folder = 'GoT_cast'  # In je directory deze folder zetten
+cast_folder = 'Game_of_Thrones'  # In je directory deze folder zetten
 
 known_image_encodings = []  # Voor de encodings
 image_names = [] # Image namen
@@ -33,7 +33,7 @@ for filename in glob.glob(cast_folder +'/*.jpeg'): #jpegs
 print('Cast succesfully loaded')
       
 # own_image = je eigen plaat
-def face_recog(own_image):
+def face_recog(own_image):  
     unknown = own_image
     
     from IPython.display import Image
@@ -51,9 +51,11 @@ def face_recog(own_image):
     return_img = Image(filename=images[best_match])    
     return(name, return_img)
 
-name, image = face_recog('donald.jpg')   # Donald is onze testman ;-)
-print("You most closely look like:" , name) # Er komt een lege naam terug omdat de regex nog niet werkt..
-image
+#==============================================================================
+# name, image = face_recog('donald.jpg')   # Donald is onze testman ;-)
+# print("You most closely look like:" , name) # Er komt een lege naam terug omdat de regex nog niet werkt..
+# image
+#==============================================================================
 
 
 # =============================================================================
