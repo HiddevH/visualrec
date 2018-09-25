@@ -4,9 +4,7 @@
   </head>
   <body>
     <h1>You most closely resemble: "{{ name }}"</h1>
-
-	<img src="{{ img }}" alt="img">
-
+        <img src = "{{ url_for('static', filename ='Game_of_Thrones/'+ name +'.jpeg') }}" />
   </body>
 
 </html>

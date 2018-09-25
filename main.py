@@ -8,7 +8,7 @@ Created on Thu Sep 20 11:29:13 2018
 # Face Recognition with Flask, wohoo!
 # Thanks for the example @ Aegitgey https://github.com/ageitgey/
 
-from flask import Flask, jsonify, request, redirect, render_template
+from flask import Flask, jsonify, request, redirect, render_template, url_for
 from face_compare import face_recog
 
 
@@ -39,11 +39,13 @@ def upload_image():
         if file and allowed_file(file.filename):
             # Image is geldig, we runnen het face_recog script en krijgen de naam + bestandsnaam van de match terug
             name, img = face_recog(file, cast_folder)
-            result = {                  # JSON omdat anders nog niet werkt..
-                    "You look like ": name,
-                    "Image path": str(img)
-                    }
-            return jsonify(result) # Dit is wat de browser zal laden
+           # img = img.rsplit('\\', 1)[1]
+            return render_template('result.html', img=img, name=name)
+#            result = {                  # JSON omdat anders nog niet werkt..
+#                    "You look like ": name,
+#                    "Image path": str(img)
+#                    }
+#            return jsonify(result) # Dit is wat de browser zal laden
         
         # Onderstaande code was wat ik probeerde om een HTML pagina incl. image display te maken, maar hij pakt de variabelen niet..
         # Vervang return jsonify(result) met 1 van de twee (''' <!D....''' of render_template)
@@ -61,8 +63,6 @@ def upload_image():
 #             </html>
 #             '''
 #==============================================================================
-        #render_template('result.html', img=img, name=name)
-
 
     # Als het bestand niet geldig was, of als er nog geen file is geüpload: 
     return '''
