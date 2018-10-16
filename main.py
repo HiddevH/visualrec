@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Sep 20 11:29:13 2018
-
 @author: Hidde
 """
 
@@ -9,13 +8,13 @@ Created on Thu Sep 20 11:29:13 2018
 # Thanks for the example @ Aegitgey https://github.com/ageitgey/
 
 from flask import Flask, jsonify, request, redirect, render_template, url_for
+from flask_bootstrap import Bootstrap
 from face_compare import face_recog
-
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'} # Alleen plaatjes mogen gebruikt worden
 
 app = Flask(__name__)
-
+Bootstrap(app)
 
 def allowed_file(filename): # Check of file-extension toegestaan is
     return '.' in filename and \
@@ -23,8 +22,8 @@ def allowed_file(filename): # Check of file-extension toegestaan is
 
 cast_folder = 'Game_of_Thrones' # Zo kunnen we het later dynamisch maken
 
-
 @app.route('/', methods=['GET', 'POST'])
+
 def upload_image():
     # Check if a valid image file was uploaded
     if request.method == 'POST':
