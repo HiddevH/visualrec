@@ -23,8 +23,11 @@ def allowed_file(filename): # Check of file-extension toegestaan is
 
 cast_folder = 'Game_of_Thrones' # Zo kunnen we het later dynamisch maken
 
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/upload/', methods=['GET', 'POST'])
 def upload_image():
     # Check if a valid image file was uploaded
     if request.method == 'POST':
@@ -41,39 +44,9 @@ def upload_image():
             name, img = face_recog(file, cast_folder)
            # img = img.rsplit('\\', 1)[1]
             return render_template('result.html', img=img, name=name)
-#            result = {                  # JSON omdat anders nog niet werkt..
-#                    "You look like ": name,
-#                    "Image path": str(img)
-#                    }
-#            return jsonify(result) # Dit is wat de browser zal laden
-        
-        # Onderstaande code was wat ik probeerde om een HTML pagina incl. image display te maken, maar hij pakt de variabelen niet..
-        # Vervang return jsonify(result) met 1 van de twee (''' <!D....''' of render_template)
-#==============================================================================
-#         '''
-#             <!DOCTYPE html>
-#             <html>
-#             <head>
-#                 <title>Which Game of Thrones Cast Member Do You Look Like?</title>
-#             </head>
-#             <body>
-#                 You most closely resemble: "{{ name }}" <hr>
-#                 <img src="{{ img }}" alt="img">
-#             </body>
-#             </html>
-#             '''
-#==============================================================================
 
-    # Als het bestand niet geldig was, of als er nog geen file is geüpload: 
-    return '''
-    <!doctype html>
-    <title>Which Game of Thrones Cast Member Do You Look Like?</title>
-    <h1>Upload a picture and see which Game of Thrones cast member looks like you!</h1>
-    <form method="POST" enctype="multipart/form-data">
-      <input type="file" name="file">
-      <input type="submit" value="Upload">
-    </form>
-    '''
+    # Als het bestand niet geldig was, of als er nog geen file is geüpload:
+    return  render_template('upload.html')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
