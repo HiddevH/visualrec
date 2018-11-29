@@ -45,8 +45,10 @@ def upload_image():
            # img = img.rsplit('\\', 1)[1]
             return render_template('result.html', img=img, name=name)
 
+
     # Als het bestand niet geldig was, of als er nog geen file is geüpload:
     return  render_template('upload.html')
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
