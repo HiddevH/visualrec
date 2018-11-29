@@ -43,10 +43,10 @@
 <header class="masthead">
   <div class="container d-flex h-100 align-items-center">
     <div class="mx-auto text-center">
-      <h1 class="mx-auto my-0">Untitled</h1>
-      <h2 class="text-black mx-auto mt-2 mb-5">Compare yourself<br>
-with the cast of your beloved<br><span style="font-weight: 900;">series</span> and <span style="font-weight: 900;">movies</span>🍿</h2>
-      <a href="{{ url_for('upload_image') }}" class="btn btn-primary js-scroll-trigger">Get started</a>
+      <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input class="btn btn-primary js-scroll-trigger" type="submit" value="Upload">
+
     </div>
   </div>
 </header>

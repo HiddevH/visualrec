@@ -23,8 +23,11 @@ def allowed_file(filename): # Check of file-extension toegestaan is
 
 cast_folder = 'Game_of_Thrones' # Zo kunnen we het later dynamisch maken
 
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/upload/', methods=['GET', 'POST'])
 def upload_image():
     # Check if a valid image file was uploaded
     if request.method == 'POST':
@@ -42,8 +45,9 @@ def upload_image():
            # img = img.rsplit('\\', 1)[1]
             return render_template('result.html', img=img, name=name)
 
-    # Als het bestand niet geldig was, of als er nog geen file is geüpload: 
-    return render_template('index.html')
+
+    # Als het bestand niet geldig was, of als er nog geen file is geüpload:
+    return  render_template('upload.html')
 
 
 if __name__ == "__main__":
