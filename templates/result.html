@@ -1,10 +1,10 @@
 <html>
   <head>
-     <title>Which Game of Thrones Cast Member Do You Look Like?</title>
+     <title>Which Cast Member Do You Look Like?</title>
   </head>
   <body>
     <h1>You most closely resemble: "{{ name }}"</h1>
-        <img src = "{{ url_for('static', filename ='Game_of_Thrones/'+ name +'.jpeg') }}" />
+        <img src = "{{ url_for('static', filename = cast_folder + '/' + name +'.jpeg') }}" />
  </body>
 
 </html>
