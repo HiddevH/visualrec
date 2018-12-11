@@ -59,9 +59,8 @@ Some general good practices apply to the part of the application passing dynamic
 
 ## To do list
 
-* Determine Target Channels.
-* Determine MVP to test response on channels.
-* ...
+* Allow someone to upload a picture and the go to the browse page to select the casts. The image preferably isn't stored but kept in memory. Need links on browse buttons to pictures.
+
 
 
 #### Input
