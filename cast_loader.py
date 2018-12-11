@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Sep 20 11:20:47 2018
-@author: Hidde
+@author: Hidde van Heijst - hpf.vanheijst@gmail.com
 """
 
 def load_cast(cast_folder):
@@ -16,7 +16,7 @@ def load_cast(cast_folder):
     image_names = [] # Image namen
     images = [] # De images
 
-    for filename in glob.glob('static/'+ cast_folder +'/*.jpeg'): #jpegs
+    for filename in glob.glob(cast_folder +'/*.jpeg'): #jpegs
           name = re.sub('(^[^\\/]*.[^\\/]*[^_])', '', filename)
           name = re.sub('\.jpeg$', '', name) # Haalt de namen uit de bestandsnamen
           print(filename)
@@ -28,7 +28,7 @@ def load_cast(cast_folder):
 
     encodes = dict(zip(images, known_image_encodings)) # We koppelen de bestandsnamen aan de gescande gezichten. De regex bij name =  kunnen we gebruiken om de namen uit de bestanden te halen
 
-    pickle_file = 'static/{}_encodings.p'.format(cast_folder) # Definieer pickle bestandsnaam
+    pickle_file = '{}_encodings.p'.format(cast_folder) # Definieer pickle bestandsnaam
     pickle.dump(encodes, open(pickle_file, 'wb'))  # Schrijf de dict encodes weg naar een pickle data bestand
     print('Succesfully stored encodings to ' +pickle_file) # Bevestig het schrijven
 

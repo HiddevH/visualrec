@@ -16,14 +16,16 @@ def create_encodings():
     from pathlib import Path
 
     rootdir = Path('static')
-    file_list = [str(f) for f in rootdir.glob('**/*') if f.is_dir()]
+    exclude_dir = ['static/Thumbnails', 'static/css']
+
+    file_list = [str(f) for f in rootdir.glob('**/*') if f.is_dir() and str(f) not in exclude_dir]
 
     for cast_folder in file_list:
         print(cast_folder)
         try: # Als er al een pickle bestand bestaat van de geladen cast dan laad hij dat
             with open('{}_encodings.p'.format(cast_folder), 'rb') as cast:
                 known_image_encodings = pickle.load(cast)
-        except IOError: # Anders laad de cast en maak er een pickle van
+        except OSError : # Anders laad de cast en maak er een pickle van
             print('Cast encodings not found, creating new encodings..')
             from cast_loader import load_cast
             load_cast(cast_folder)
