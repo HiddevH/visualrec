@@ -15,15 +15,15 @@ def face_recog(own_image, cast_folder):
     import numpy as np
     import re
 
-    try: # Als er al een pickle bestand bestaat van de geladen cast dan laad hij dat
-        with open('static/{}_encodings.p'.format(cast_folder), 'rb') as cast:
+    try: # If encoding exist, store it in known_image_encodings
+        with open(f'static/encodings/{cast_folder}_encodings.p', 'rb') as cast:
             known_image_encodings = pickle.load(cast)
-    except IOError: # Anders laad de cast en maak er een pickle van
-        print('Cast encodings not found, creating new encodings..')
-        from cast_loader import load_cast
-        load_cast(cast_folder)
-        known_image_encodings = pickle.load(open('static/{}_encodings.p'.format(cast_folder), 'rb')) # Schrijf de data in known_image_encodings
-
+    except IOError: # If it doesn't exist, send an email to tech support? :-D
+        from error_email import errormail
+        subject = f'IMAGINE_DS: Error occured in face_compare.py' 
+        message = f'User tried loading the cast of {cast_folder} but failed.' 
+        errormail(subject=subject, msg=message)
+        
     unknown = own_image # Dit is het geüploade bestand
     unknown_image = face_recognition.load_image_file(unknown)
     unknown_encoding = face_recognition.face_encodings(unknown_image)[0] # Face_recognition op unknown
@@ -40,3 +40,4 @@ def face_recog(own_image, cast_folder):
 
 if __name__ == "__main__":
     face_recog('donald.jpg', 'How_i_met_your_mother')
+
