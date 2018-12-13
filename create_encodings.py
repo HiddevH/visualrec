@@ -33,9 +33,8 @@ def load_cast(cast_folder, encoding_path):
     images = [] # De images
 
     for filename in glob.glob(cast_folder +'/*.jpeg'): # Must be jpegs
+      if 'thumbnail' not in filename: # Don't encode thumbnails
           print(f'encoding filename: {filename}')
-          #name = re.sub('(^[^\\/]*.[^\\/]*[^_])', '', filename) # remove /static/ from filepath
-          #print(f'removed /static/ check : {name}')
           images.append(filename) # List met de filenames van de cast
           im = face_recognition.load_image_file(filename) # Face recognition op de cast
           im = face_recognition.face_encodings(im)[0]

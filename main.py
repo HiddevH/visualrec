@@ -8,6 +8,7 @@ Created on Thu Sep 20 11:29:13 2018
 
 from flask import Flask, jsonify, request, redirect, render_template, url_for, session
 from face_compare import face_recog
+from browse_casts import get_browse_casts
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'} # Alleen plaatjes mogen gebruikt worden
 
@@ -17,7 +18,7 @@ def allowed_file(filename): # Check of file-extension toegestaan is
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-selected_cast = 'Game_of_Thrones' # Deze variabele moet eigenlijk uit browse.html komen
+#selected_cast = 'Game_of_Thrones' # Deze variabele moet eigenlijk uit browse.html komen
 
 @app.route('/')
 @app.route('/index')
@@ -47,19 +48,16 @@ def upload_image():
 def result():
     if 'results' not in session: # Als er nog geen results dict is, laad de upload pagina
         return redirect(url_for('upload_image'))
+    selected_cast = session['selected_cast']
     return render_template('result.html', selected_cast=selected_cast, name=session['results'][selected_cast]) # Anders, toon resultaten
 
-@app.route('/browse')
+@app.route('/browse', methods=['GET', 'POST'])
 def browse():
-    return render_template('browse.html')
-
-#face_distances = face_recognition.face_distance(face_values, unknown_encoding) # Bereken de afstand tussen de gezichten van de cast en het onbekende img
-#best_match = np.argmin(face_distances) # Zoek de image met de minste afstand tot de onbekende image
-#match_file = list(known_image_encodings.keys())[best_match] # geef de image file terug die het meest lijkt op de onbekende
-#name = re.sub('(^[^\\\]*[^_])', '', match_file)
-#name = re.sub('\.jpeg$', '', name) # Haalt de namen uit de bestandsnamen
-
-#return_img = match_file # Returns filename van matched image - Python display: Image(filename=match_file)
+    if request.method == 'POST': # Check if user selected cast
+        session['selected_cast'] = request.form['selected_cast']
+        return redirect(url_for('result'))
+    browsable_casts = get_browse_casts()
+    return render_template('browse.html', casts=browsable_casts, len=len(browsable_casts))
 
 @app.route('/about_us')
 def about_us():
