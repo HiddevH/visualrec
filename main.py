@@ -6,7 +6,7 @@ Created on Thu Sep 20 11:29:13 2018
 # Face Recognition with Flask, wohoo!
 # Thanks for the example @ Aegitgey https://github.com/ageitgey/
 
-from flask import Flask, jsonify, request, redirect, render_template, url_for
+from flask import Flask, jsonify, request, redirect, render_template, url_for, session
 from face_compare import face_recog
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'} # Alleen plaatjes mogen gebruikt worden
@@ -17,7 +17,7 @@ def allowed_file(filename): # Check of file-extension toegestaan is
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-cast_folder = 'How_i_met_your_mother' # Zo kunnen we het later dynamisch maken
+selected_cast = 'Game_of_Thrones' # Deze variabele moet eigenlijk uit browse.html komen
 
 @app.route('/')
 @app.route('/index')
@@ -38,12 +38,16 @@ def upload_image():
 
         if file and allowed_file(file.filename):
             # Image is geldig, we runnen het face_recog script en krijgen de naam + bestandsnaam van de match terug
-            name = face_recog(file, cast_folder)
-            #return redirect(url_for('browse'))
-            return render_template('result.html', cast_folder=cast_folder, name=name)
-
+            session['results'] = face_recog(file) # Returns dict met {cast : bijhorende match}
+            return redirect(url_for('result')) #render_template('result.html', selected_cast=selected_cast, name=results[selected_cast])
     # Als het bestand niet geldig was, of als er nog geen file is geüpload:
     return  render_template('upload.html')
+
+@app.route('/result')
+def result():
+    if 'results' not in session: # Als er nog geen results dict is, laad de upload pagina
+        return redirect(url_for('upload_image'))
+    return render_template('result.html', selected_cast=selected_cast, name=session['results'][selected_cast]) # Anders, toon resultaten
 
 @app.route('/browse')
 def browse():
@@ -62,4 +66,6 @@ def about_us():
     return render_template('about_us.html')
 
 if __name__ == "__main__":
+    app.config['SECRET_KEY'] = "winteriscoming"
     app.run(host='0.0.0.0')
+
