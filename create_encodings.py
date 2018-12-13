@@ -33,10 +33,7 @@ def load_cast(cast_folder, encoding_path):
     images = [] # De images
 
     for filename in glob.glob(cast_folder +'/*.jpeg'): # Must be jpegs
-          name = re.sub('(^[^\\/]*.[^\\/]*[^_])', '', filename)
-          name = re.sub('\.jpeg$', '', name) # Haalt de namen uit de bestandsnamen
-          print(filename)
-          image_names.append(name) # List met de namen van de cast
+          print(f'encoding filename: {filename}')
           images.append(filename) # List met de filenames van de cast
           im = face_recognition.load_image_file(filename) # Face recognition op de cast
           im = face_recognition.face_encodings(im)[0]
@@ -67,17 +64,14 @@ def create_encodings():
     for cast_folder in cast_list:
         cast = os.path.basename(os.path.normpath(cast_folder))  # strip the directory path from the cast_folder
         encoding_path =  Path(rootdir) / 'encodings' / f'{cast}_encodings.p'
-        print(f'looking up encoding for: {cast}..')
+        print(f'trying encode for: {cast}..')
 
         try:  # If an encoding already exists, we try loading it
             with open(encoding_path, 'rb') as encoded_cast:
-                known_image_encodings = pickle.load(encoded_cast)
-                print(f'found the encoding for {cast}!')
+                load_cast(cast_folder, encoding_path)  # Create encodings for the cast
+                print(f'created encoding for {cast}!')
         except OSError :  # If the cast encoding is not found, we create one
-            print('Cast encodings not found, creating new encodings..')
-            load_cast(cast_folder, encoding_path)  # Create encodings for the cast
-            known_image_encodings = pickle.load(open(encoding_path, 'rb'))  # Load the data from the now encoded cast
-            print(f'Succesfully loaded the newly created encodings for {cast}')  # Print a confirmation
+            print('Something went wrong..')
 
 if __name__ == '__main__':
     create_encodings()
