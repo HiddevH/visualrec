@@ -50,8 +50,10 @@ def result():
         return redirect(url_for('upload_image'))
     elif 'selected_cast' not in session:
         return redirect(url_for('browse'))
-        
+
     selected_cast = session['selected_cast']
+    import time
+    time.sleep(1)
     return render_template('result.html', selected_cast=selected_cast, name=session['results'][selected_cast]) # Anders, toon resultaten
 
 @app.route('/browse', methods=['GET', 'POST'])
@@ -69,4 +71,3 @@ def about_us():
 if __name__ == "__main__":
     app.config['SECRET_KEY'] = "winteriscoming"
     app.run(host='0.0.0.0')
-
