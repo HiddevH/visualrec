@@ -20,7 +20,7 @@ def load_cast(cast_folder, encoding_path):
     """ Creates encodings for the cast located at path cast_folder
       And stores the encodings in encoding_path.
       :param cast_folder -> the folder where the cast resides
-      :param encoding_path -> the path where the encoding should be stored 
+      :param encoding_path -> the path where the encoding should be stored
       """
 
     import face_recognition
@@ -41,12 +41,11 @@ def load_cast(cast_folder, encoding_path):
           known_image_encodings.append(im)
 
     encodes = dict(zip(images, known_image_encodings)) # We koppelen de bestandsnamen aan de gescande gezichten. De regex bij name =  kunnen we gebruiken om de namen uit de bestanden te halen
-
     pickle.dump(encodes, open(encoding_path, 'wb'))  # Schrijf de dict encodes weg naar een pickle data bestand
     print(f'Succesfully stored encodings to {encoding_path}') # Bevestig het schrijven
 
 
-def create_encodings():
+def create_encodings(search_term=''):
     """ This function scans the casts folder for casts, and if an face recogntion encoding already exists or not.
     If it does not exist yet, it calls to generate an encoding"""
 
@@ -56,12 +55,12 @@ def create_encodings():
     import os
 
     rootdir = Path('static')
-    exclude_dir = ['nietdezefolder']  # If you want to exclude some paths
 
-    cast_list = [str(f) for f in rootdir.glob('casts/*')  # If f is a folder in casts 
-                         if f.is_dir() and str(f) not in exclude_dir]  # and not in exclude_dir, we put it in file_list
 
-    
+    cast_list = [str(f) for f in rootdir.glob('casts/*')  # If f is a folder in casts
+                         if f.is_dir() and search_term in str(f)]  # and not in exclude_dir, we put it in file_list
+
+
     for cast_folder in cast_list:
         cast = os.path.basename(os.path.normpath(cast_folder))  # strip the directory path from the cast_folder
         encoding_path =  Path(rootdir) / 'encodings' / f'{cast}_encodings.p'
