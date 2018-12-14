@@ -48,6 +48,9 @@ def upload_image():
 def result():
     if 'results' not in session: # Als er nog geen results dict is, laad de upload pagina
         return redirect(url_for('upload_image'))
+    elif 'selected_cast' not in session:
+        return redirect(url_for('browse'))
+        
     selected_cast = session['selected_cast']
     return render_template('result.html', selected_cast=selected_cast, name=session['results'][selected_cast]) # Anders, toon resultaten
 

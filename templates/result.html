@@ -1,10 +1,17 @@
-<html>
-  <head>
-     <title>Which Cast Member Do You Look Like?</title>
-  </head>
-  <body>
-    <h1>You most closely resemble: "{{ name }}"</h1>
-        <img src = "{{ url_for('static', filename = 'casts/' + selected_cast + '/' + name +'.jpeg') }}" />
- </body>
+{% extends 'base.html' %}
 
-</html>
+{% block header %}
+<header class="masthead">
+  <div class="container d-flex h-100 align-items-center">
+    <div class="mx-auto text-center">
+      <h2 class="text-black mx-auto mt-2 mb-5">You most closely resemble:</h2>
+      <h1 class="mx-auto my-0">{{ name }}</h1>
+     	 <div class="square">
+      	<img src = "{{ url_for('static', filename = 'casts/' + selected_cast + '/' + name +'.jpeg') }}" width="600" height="500" class="contain"/><br>
+  		</div>
+      <a href="{{ url_for('browse') }}" class="btn btn-primary js-scroll-trigger">Other cast</a>
+      <a href="{{ url_for('upload_image') }}" class="btn btn-primary js-scroll-trigger">Another photo</a>
+    </div>
+  </div>
+</header>
+{% endblock %}

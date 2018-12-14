@@ -201,3 +201,12 @@ a:focus, a:hover {
 .text-primary {
   color: #000 !important;
 }
+
+.contain {
+  object-fit: contain;
+}
+
+.square {
+    height: 600px;
+    width: 600px;
+}
