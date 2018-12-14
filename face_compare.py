@@ -25,6 +25,10 @@ def face_recog(usr_image):
 
     results = {}  # We want to store a result for each cast, in a dict
 
+    unknown = usr_image # Dit is het geüploade bestand
+    unknown_image = face_recognition.load_image_file(unknown)
+    unknown_encoding = face_recognition.face_encodings(unknown_image)[0] # Face_recognition op unknown
+
     for cast_folder in cast_list:
         # < THIS CODE IS MOSTLY SAME AS create_encodings.py >
         cast = os.path.basename(os.path.normpath(cast_folder))  # strip the directory path from the cast_folder
@@ -39,9 +43,7 @@ def face_recog(usr_image):
             message = f'User tried loading the cast of {cast_folder} but failed.' 
             errormail(subject=subject, msg=message)
             
-        unknown = usr_image # Dit is het geüploade bestand
-        unknown_image = face_recognition.load_image_file(unknown)
-        unknown_encoding = face_recognition.face_encodings(unknown_image)[0] # Face_recognition op unknown
+
         print(f'Scanning faces in {cast}')
 
         face_values = list(known_image_encodings.values()) # Maak een lijst met alleen de waarden (face_encodings)
