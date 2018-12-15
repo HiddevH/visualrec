@@ -1,3 +1,44 @@
+---
+title: "Google App Engine and Docker Custom Builds"
+output: html_document
+---
+
+# Documentation on how to use docker in combination with Google App Engine.
+
+In your google cloud shell create the following structure:
+
+```
+.
+├── app
+│   ├── main.py
+│   └── static
+│       └── index.html
+├── Dockerfile
+└── app.yaml
+```
+
+
+Run the following to build an image. 
+
+```
+docker build -t myimage .
+docker rm mycontainer
+docker run -d --name mycontainer -p 8080:8080 myimage
+
+#If IP port already occupied do 1 of the following:
+sudo netstat -peanut 
+sudo netstat -ntpl | grep 8080
+
+#Last number is the PID #, then do:
+sudo kill PID
+
+gcloud app create
+gcloud app deploy
+gcloud app browse
+```
+
+
+
 
 
 ```
@@ -48,35 +89,4 @@ gcloud app deploy app.yaml--project project amazing-blend-217212
 gcloud app browse
 gcloud app logs tail -s default
 https://amazing-blend-217212.appspot.com/
-```
-
-Docker example
-
-Create the following structure:
-```
-.
-├── app
-│   ├── main.py
-│   └── static
-│       └── index.html
-├── Dockerfile
-└── app.yaml
-```
-
-
-```
-docker build -t myimage .
-docker rm mycontainer
-docker run -d --name mycontainer -p 8080:8080 myimage
-
-#If IP port already occupied do 1 of the following:
-sudo netstat -peanut 
-sudo netstat -ntpl | grep 8080
-
-#Last number is the PID #, then do:
-sudo kill PID
-
-gcloud app create
-gcloud app deploy
-gcloud app browse
 ```
