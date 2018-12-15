@@ -1,4 +1,6 @@
 
+
+```
 cat > main.py <<EOF
 
 # [START gae_python37_app]
@@ -46,3 +48,35 @@ gcloud app deploy app.yaml--project project amazing-blend-217212
 gcloud app browse
 gcloud app logs tail -s default
 https://amazing-blend-217212.appspot.com/
+```
+
+Docker example
+
+Create the following structure:
+```
+.
+├── app
+│   ├── main.py
+│   └── static
+│       └── index.html
+├── Dockerfile
+└── app.yaml
+```
+
+
+```
+docker build -t myimage .
+docker rm mycontainer
+docker run -d --name mycontainer -p 8080:8080 myimage
+
+#If IP port already occupied do 1 of the following:
+sudo netstat -peanut 
+sudo netstat -ntpl | grep 8080
+
+#Last number is the PID #, then do:
+sudo kill PID
+
+gcloud app create
+gcloud app deploy
+gcloud app browse
+```
