@@ -1,4 +1,200 @@
-¶+exYZ²@)¥ú+§"jT^rˆ'ŠØ¨‹­¦ëa¶i]¡Ë¦z{HÚèvç-Š‰Ó†++y§fz+¢¶©®ˆŞr×èrëv‰î²)à}§"jZŞrˆ'ŠØ¨)Ú§+a¢ß•«$jšHµìi•¨§²0¶‹¶êm…ç§¾*èg§¶Ú+º{ayªijwfjv zØ^uëè¦Êk¡Ç¬°*&¦ë^zx"ë¶êS…ìmªi–'¶*'ºÇ¬§+a¢}ûjw_•«$~Ší…æ©¦§‰Ê+ú+¶°²¬z»Ş­©İ§Å«0y»®÷«ŠŞÆ™Z«b¢z¶¬z×«šÊey«±ç€¦—§v,HméhÀ*&¦‰ŞÖ§v·¥zö§µø¥z‹Ş®øÀØ"ŸnÇ«½êëyÇ¢¾)à{^®v¥­ê®zËlıë\şx"ŸìŠ×¬jö¢•¦å{÷^}«¥¶x"Ÿ±µêçj[hŠ{^®v¥®‹­zÏŞµÏç‚)ñşÈ­zÇ§i¹^w÷^}«¥µø¥zØZ¶+,ÊË^šX§‘çm¢È­zÆ¯j)ZnW¿z×?§ÇùàŠ|\¢wç‚)ñéŞ­©lzÛb?z×?§Çúk£©j¶¦²ËZÖ«v–«jg­z»&jšbè®x"Ÿh‚éârŠçr‰¦ºxœjØ¨œk§‰Ê+)íz¹Ú–Ç«½êìµªí²ê_•«$jšlıë\şÌ¬µéşÌ¬µé¿™¨§±êï‰Ç¬z»âqëajÙz›ºxœ¢¹ìz»Ş®»§)àıöœz·œıùZ²Oæj)ì¡ÉµÊ'ç-Š‰íºyŞ•·­Áç§éârŠçjwE•«$V¬‘ªi¶šrÛš–œ­†‰÷m«uªi–'¶*'ıöœz·œıùZ²Oğ²©Ê×¥–Á®'(®{®÷«†Œ-¢)íz¶œ·­†Ø^jše‰Æ­Š‰ÿ}§­ç?~V¬“ùšŠzr²Ö«¶Ë©~V¬‘ªiıöœz·œıùZ²OßiÇœ¢jZ­êr²æìr¸©·÷ÚqêŞs÷åjÉ?r·šµç§r‡b)ÊË›±Êâ¦ßßiÇ«yÏß•«$ıºèÂÇœjËl§+.nÇ+Š›}§­ç?~V¬“úŞªè«zg§¶ËqµX«¶æ¥{â®‰æz{pŠØiiÉë?}§­ç?~V¬“ûŞõl*'µéír‰íz{m¡·¬z»Şv‰ğy»"µïßiÇ«yÏß•«$şËZ¶'?}§­ç?~V¬“û^š™Zµë¡§]–†m©ZÈ§ƒ­„Ñˆ5{¥êÚµåL1©Ú‚)à¶•0Ø"Ÿb®Ë\¢{ZrÚhŠ{pŠØpy»"µëâ²+h¬X«²Ø(¶ŒnÈ­yDKüƒí¡È^rBÊ‹Ê.×«j|®º+²‰í…ìnÈ­zÚòŠx…ç$Šx-…çè–Z0Šx,¹Ú%zË?½ªÿ–ˆ?§Ç÷«®Šå¢!yÉ0†'!zºè®Ì­ë®÷¶‹azø¬ŠÚ+³ø§§ÆË¢W¬³ûÚ¯ùhƒùàŠ|iÇ²ÉhÈ^rL!‰Èn±êì¾+"µçpy»"µë.vˆèº¹Ú•Ëeºx"Ÿ!yÉ,¶‚)ñ¦ºzË%¢,¹Ú'‚)ñµÈ^rGè®Ì§µ¬^®º+²)ìŠ×¬jö¢•¦å{÷^}«¥´X±ŠË.zÆòyØ­Šx,¹Ú'jz?z×?³+-zg³+-zoæÊšèç-±êï‰Ç¬¹Ú'jz?z×?§Çû"µë½¨¥i¹^ı×Ÿjém²çh±êï‰Ç§‚)ñ²Ö«·û-¢ŸëzËZ®Ñ®'(®w!yÉ"~Ç«¾'ŠË-ŠYp¢¹"
-k¢—«—!b®Ë\…ç$‰û®øœz++ºyâ
-k¢—«—+.v‹2²×¦rÙlµ«n²f¢œ‡ç¢×ŠÜ"¶ayú%–Œ"(šf§vË.v‹2²×¦rÙl¶Šfj)ì¹Ú'jz?z×?³+-zg³+-zoæj)ìz»âqë.v‹2²×¦rÙ]ié¨·¥¡§l¹Ú,ÊË^™Ëe²Ö«¶f¢Ë¢Ì¬µéœ¶W§i¹^™¨§!ûaj×hzÉí±ç¦¶Œ(®Fœ¶+Úµëâ®Ûš•éïŠº'™éíqßßiÇ«yÏß•«$şÊ.­Ç¯z{ÿn)ÿiËb½«^N§rœ’'ëºyâ.'(®x"½ëŸ'«®Šì‚éârŠçn)İÓM4óM4ÂÈ"V¬’Ø^iËnjV©¦œ­†‰÷™¨§§'±yË­zØ^±Êâ¦Ùšæ¥—+h²š-§+a¢w«®Šì
-·šµà¨š›­xIàŠw“¡Ú­æ­zÈ^–[®*m²Ú,zÛ©r‰©º×§yªº*Ş™éí²ÜmrXœ“®Ü™©ß]´vX›×İyÑÚ&Šv­{mø}§­ç(‚x­Š‰
+---
+title: "Flask App for Facial Recognition"
+output: html_document
+---
+
+## Introduction
+This repository is for a project focused on using facial recognition in a python/flask app.
+To explain how the application works
+## Compute engine setup
+
+We will set up a compute engine with python 3.7 and flask for the app, gunicorn for the wsgi server and nginx as web server.
+For initial set up we will use an image of our already used compute engine. << insert instruction to go from scratch to this new vm, includes DLIB so a PITA >>
+
+
+### Component and relevant file overview
+
+```
+Nginx - Web server receiving external requests
+/etc/nginx/nginx.conf -- nginx settings external to internal routing
+/etc/nginx/uswgi.params -- standard parameters mapping for nginx to uwsgi communication
+/etc/nginx/sites-available/default -- nginx internal routes, from port 80 to 8000
+/etc/nginx/sites-enabled/default -- system linked to sites available
+/var/log/nginx/error.log -- check which errors were served to the visitors/in nginx 
+/var/log/nginx/access.log -- check which users visited website
+
+uWSGI server - internal server that starts up a flask app per visitor.
+/etc/systemd/system/main.service -- service that keeps uWSGI server running
+~/face_rec/flask/main.ini -- uWSGI configuration file refers to wsgi.py down below.
+~/face_rec/flask/main.socket -- connection tunnel between uWSGI and Flak
+
+Flask app - the actual python3 based application
+~/face_rec/flask/wsgi.py -- tells uWSGI server how to interact with the application
+~/face_rec/flask/main.py -- starts up flask app
+~/face_rec/flask/face_compare.py
+~/face_rec/flask/create_encodings.py
+~/face_rec/flask/browse_casts.py
+
+Virtual Environment with packages
+~/face_rec/flask/venv
+
+Web Content - content to be served on website
+~/face_rec/flask/static
+~/face_rec/flask/templates
+```
+
+
+
+```
+Nginx - Web server receiving external requests
+/etc/nginx/nginx.conf -- nginx settings external to internal routing
+/etc/nginx/uswgi.params -- standard parameters mapping for nginx to uwsgi communication
+/etc/nginx/sites-available/default -- nginx internal routes, from port 80 to 8000
+/etc/nginx/sites-enabled/default -- system linked to sites available
+/var/log/nginx/error.log -- check which errors were served to the visitors/in nginx 
+/var/log/nginx/access.log -- check which users visited website
+
+Gunicorn - internal server that starts up a flask app per visitor.
+/etc/systemd/system/main.service -- service that keeps Gunicorn server running
+~/face_rec/flask/main.socket -- connection tunnel between Gunicorn and Flask
+
+Flask app - the actual python3 based application
+~/face_rec/flask/wsgi.py -- tells Gunicorn server how to interact with the application
+~/face_rec/flask/main.py -- starts up flask app
+~/face_rec/flask/face_compare.py
+~/face_rec/flask/create_encodings.py
+~/face_rec/flask/browse_casts.py
+
+Virtual Environment with packages
+~/face_rec/flask/venv
+
+Web Content - content to be served on website
+~/face_rec/flask/static
+~/face_rec/flask/templates
+```
+
+
+
+
+
+Service to start uWSGI instance to serve app
+```
+
+Create file and use sudo service main start/enable which creates the main.socket file
+
+```
+[Unit]
+Description=uWSGI instance to serve main
+After=network.target
+
+[Service]
+User=mauricerichard91
+Group=nginx
+WorkingDirectory=/home/mauricerichard91/face_rec/flask/
+Environment="PATH=/home/mauricerichard91/face_rec/flask/venv/bin"
+ExecStart=/home/mauricerichard91/face_rec/flask/venv/bin/uwsgi --i$
+
+[Install]
+WantedBy=multi-user.target
+
+
+### Managing the VM
+
+Nginx
+To start servicing external requests. 
+sudo service nginx start/stop/restart
+
+If you encounter any errors on the website, trying checking the following:
+sudo less /var/log/nginx/error.log : checks the Nginx error logs.
+sudo less /var/log/nginx/access.log : checks the Nginx access logs.
+sudo journalctl -u nginx : checks the Nginx process logs.
+sudo journalctl -u main: checks your Flask app's uWSGI logs.
+
+sudo nano /etc/systemd/system/myproject.service
+
+Gunicorn
+
+
+Flask 
+
+
+
+## Nginx
+
+
+
+
+
+
+#### Sidenote 
+Creating cookiecutter templates:
+```
+pip3 install cookiecutter
+mkdir HelloCookieCutter1
+cd HelloCookieCutter1
+mkdir {{cookiecutter.directory_name}}
+cd {{cookiecutter.directory_name}}
+cat > {{cookiecutter.file_name}}.py << EOF
+print("Hello, {{cookiecutter.greeting_recipient}}!")
+EOF
+```
+```
+cd ..
+cat > cookiecutter.json << EOF
+{
+    "directory_name": "Hello",
+    "file_name": "Howdy",
+    "greeting_recipient": "Julie"
+}
+EOF
+```
+  
+## Appendix I: General explanation of web framework  
+1. Web Frameworks & Flask  
+2. Serving Flask applications
+   1. WSGI server
+   2. Web server
+   3. Templating engine
+
+#### Web Frameworks & Flask
+Broadly speaking, a web framework consists of a set of libraries and a main handler within which you can build custom code to implement a web application (i.e. an interactive web site). Most web frameworks include patterns and utilities to accomplish at least the following:
+
+* **URL Routing**  
+Matches an incoming HTTP request to a particular piece of Python code to be invoked.
+
+* **Request and Response Objects**   
+Encapsulate the information received from or sent to a userâ€™s browser.
+
+* **Template Engine**  
+Allows for separating Python code implementing an applicationâ€™s logic from the HTML (or other) output that it produces.
+
+* **Development Web Server**  
+Runs an HTTP server on development machines to enable rapid development; often automatically reloads server-side code when files are updated
+
+Flask is a â€œmicroframeworkâ€ for Python, and is an excellent choice for building smaller applications, APIs, and web services.
+Building an app with Flask is a lot like writing standard Python modules, except some functions have routes attached to them.
+
+#### Serving Flask applications to the public  
+The majority of Python applications today are hosted with a WSGI server such as Gunicorn, either directly or behind a lightweight web server such as nginx. The WSGI servers serve the applications while the web server handles tasks better suited for it such as static file serving, request routing, DDoS protection, and basic authentication.
+
+#### 1.  WSGI server
+The Web Server Gateway Interface (or â€œWSGIâ€ for short) is a standard interface between web servers and Python web application frameworks. Stand-alone WSGI servers typically use less resources than traditional web servers and provide top performance.
+
+* Gunicorn (Green Unicorn) is a pure-python WSGI server used to serve Python applications. Unlike other Python web servers, it has a thoughtful user-interface, and is extremely easy to use and configure. Gunicorn has sane and reasonable defaults for configurations. However, some other servers, like uWSGI, are tremendously more customizable, and therefore, are much more difficult to effectively use. Gunicorn is the recommended choice for new Python web applications today.
+
+* uWSGI is a full stack for building hosting services. In addition to process management, process monitoring, and other functionality, uWSGI acts as an application server for various programming languages and protocols - including Python and WSGI. uWSGI can either be run as a stand-alone web router, or be run behind a full web server (such as Nginx or Apache). In the latter case, a web server can configure uWSGI and an applicationâ€™s operation over the uwsgi protocol. uWSGIâ€™s web server support allows for dynamically configuring Python, passing environment variables and further tuning.
+
+#### 2. Web Server - Nginx
+Nginx (pronounced â€œengine-xâ€) is a web server and reverse-proxy for HTTP, SMTP and other protocols. It is known for its high performance, relative simplicity, and compatibility with many application servers (like WSGI servers). It also includes handy features like load-balancing, basic authentication, streaming, and others. Designed to serve high-load websites, Nginx is gradually becoming quite popular.
+
+#### 3. Templating - Jinja2
+Most WSGI applications are responding to HTTP requests to serve content in HTML or other markup languages. Instead of generating directly textual content from Python, the concept of separation of concerns advises us to use templates. Jinja2 is text-based template language and can thus be used to generate any type markup, not just HTML. It allows customization of filters, tags, tests and globals.
+
+A template engine manages a suite of template files, with a system of hierarchy and inclusion to avoid unnecessary repetition, and is in charge of rendering (generating) the actual content, filling the static content of the templates with the dynamic content generated by the application.
+
+As template files are sometimes written by designers or front-end developers, it can be difficult to handle increasing complexity.
+Some general good practices apply to the part of the application passing dynamic content to the template engine, and to the templates themselves.
+*  Template files should be passed only the dynamic content that is needed for rendering the template. Avoid the temptation to pass additional content â€œjust in caseâ€: it is easier to add some missing variable when needed than to remove a likely unused variable later.
+*  Many template engines allow for complex statements or assignments in the template itself, and many allow some Python code to be evaluated in the templates. This convenience can lead to uncontrolled increase in complexity, and often make it harder to find bugs.
+
+
