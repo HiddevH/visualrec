@@ -16,6 +16,7 @@ sudo docker push $DOCKER_ID_USER/myimage
 On the app engine
 ```
 sudo docker pull mr1991/myimage  
+sudo docker run -d --name mycontainer -p 8080:8080 myimage
 ```
 
 
