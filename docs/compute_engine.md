@@ -69,15 +69,15 @@ Nginx - Web server receiving external requests
 /etc/nginx/uswgi.params -- standard parameters mapping for nginx to uwsgi communication
 /etc/nginx/sites-available/default -- nginx internal routes, from port 80 to 8000
 /etc/nginx/sites-enabled/default -- system linked to sites available
-/var/log/nginx/error.log
-/var/log/nginx/access.log
+/var/log/nginx/error.log -- check which errors were served to the visitors/in nginx 
+/var/log/nginx/access.log -- check which users visited website
 
-uWSGI server - internal server that starts up flask apps per request.
+uWSGI server - internal server that starts up a flask app per visitor.
 /etc/systemd/system/main.service -- service that keeps uWSGI server running
-~/face_rec/flask/main.ini -- uWSGI configuration file refers to wsgi.py
-~/face_rec/flask/main.socket -- connection tunnel created when starting/enabling main.service
+~/face_rec/flask/main.ini -- uWSGI configuration file refers to wsgi.py down below.
+~/face_rec/flask/main.socket -- connection tunnel between uWSGI and Flak
 
-Flask app - the actual python based application
+Flask app - the actual python3 based application
 ~/face_rec/flask/wsgi.py -- tells uWSGI server how to interact with the application
 ~/face_rec/flask/main.py -- starts up flask app
 ~/face_rec/flask/face_compare.py
@@ -90,9 +90,12 @@ Virtual Environment with packages
 Web Content - content to be served on website
 ~/face_rec/flask/static
 ~/face_rec/flask/templates
-
-
 ```
+
+
+
+
+
 
 
 Service to start uWSGI instance to serve app
@@ -132,28 +135,6 @@ sudo journalctl -u nginx : checks the Nginx process logs.
 sudo journalctl -u main: checks your Flask app's uWSGI logs.
 
 sudo nano /etc/systemd/system/myproject.service
-
-
-
-```
-
-
-main.ini
-main.sock
-
-
-
-
-
-
-
-~face_rec/flask
-face_compare.py
-main.py -- main flask app script
-
-main.ini -- creates socket for service  
-wsgi.py -- entry point for WSGI server 
-
 
 
 
