@@ -1,11 +1,6 @@
+## BUILD DOCKERFILE AND USE IN APP ENGINE ##
 
- 
-######################################
-#### BUILD DOCKERFILE AND USE IN APP ENGINE ####
-######################################
-
-Previous was on starting new VM.
-Next is using the standard dockerfile from the git repo. We're going to build an image and upload it to docker hub so we can use it in the app engine
+Using the standard dockerfile from the git repo, we're going to build an image and upload it to docker hub so we can use it in the app engine
 
 On a regular VM (preferably lots of ram/cpu)
 ```
@@ -31,34 +26,36 @@ sudo docker pull mr1991/myimage
  
  
  
-######################################  
-#### DOCKER CHEATSHEET #####  
-######################################  
-  
-## List Docker CLI commands  
+ 
+
+## DOCKER CHEATSHEET ###
+
+```
+### List Docker CLI commands  
 sudo docker  
-sudo docker container --help  
+sudo docker container --help
   
-## Display Docker version and info  
+### Display Docker version and info  
 sudo docker --version  
 sudo docker version  
 sudo docker info  
   
-## Execute Docker image  
+### Execute Docker image  
 sudo docker run hello-world  
   
-## List Docker images  
+### List Docker images  
 sudo docker image ls  
   
-## List Docker containers (running, all, all in quiet mode)  
+### List Docker containers (running, all, all in quiet mode)  
 sudo docker container ls  
 sudo docker container ls --all  
 sudo docker container ls -aq  
 
-#####################################  
-### BUILD AND TEST CONTAINER ####  
-#####################################  
-  
+```
+
+## BUILD AND TEST CONTAINER ##
+
+```
 Build image (always do this whenever you change something in Dockerfile/compose.yml)  
 sudo docker build -t myimage .  
 
@@ -76,18 +73,16 @@ sudo docker container ls
   
 Run below in ~/example-flask-python3.7 for background session where you can change the python script:  
 sudo docker run -d --name mycontainer -p 80:80 -v $(pwd)/app:/app -e FLASK_APP=main.py -e FLASK_DEBUG=1 myimage flask run --host=0.0.0.0 --port=80  
-  
-  
-######################################  
-#### PUBLISH IMAGE TO DOCKER HUB #####  
-######################################  
-  
+```
+ 
+## PUBLISH IMAGE TO DOCKER HUB ### 
+```
 sudo docker build -t myimage .  
 export DOCKER_ID_USER=mr1991  
 sudo docker login  
 sudo docker tag myimage $DOCKER_ID_USER/myimage  
-sudo docker push $DOCKER_ID_USER/myimage  
-  
+sudo docker push $DOCKER_ID_USER/myimage 
+```
   
  
  
