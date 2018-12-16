@@ -1,4 +1,3 @@
-
 ## Documentation on how to use docker in combination with Google App Engine.
 
 In your google cloud shell create the following structure:
@@ -24,7 +23,7 @@ mkdir app/static
 main.py
 
 ```
-cat > app/main.py <<EOF
+cat  app/main.py << EOF \
 import os
 from flask import Flask, send_file
 app = Flask(__name__)
@@ -42,7 +41,7 @@ def main():
 @app.route('/<path:path>')
 def route_frontend(path):
     # ...could be a static file needed by the front end that
-    # doesn't use the `static` path (like in `<script src="bundle.js">`)
+    # doesn't use the static path (like in `<script src="bundle.js">`)
     file_path = os.path.join(app.static_folder, path)
     if os.path.isfile(file_path):
         return send_file(file_path)
@@ -50,7 +49,6 @@ def route_frontend(path):
     else:
         index_path = os.path.join(app.static_folder, 'index.html')
         return send_file(index_path)
-
 
 if __name__ == "__main__":
     # Only for debugging while developing
