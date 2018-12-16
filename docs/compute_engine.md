@@ -5,14 +5,156 @@ output: html_document
 
 ## Introduction
 This repository is for a project focused on using facial recognition in a python/flask app.
-To explain how the application works, first we quickly dive into the inner workings of a general web framework on Python.
+To explain how the application works
+## Compute engine setup
 
+We will set up a compute engine with python 3.7 and flask for the app, gunicorn for the wsgi server and nginx as web server.
+For initial set up we will use an image of our already used compute engine. << insert instruction to go from scratch to this new vm, includes DLIB so a PITA >>
+
+
+### Component and relevant file overview
+
+```
+Nginx - Web server receiving external requests
+/etc/nginx/nginx.conf -- nginx settings external to internal routing
+/etc/nginx/uswgi.params -- standard parameters mapping for nginx to uwsgi communication
+/etc/nginx/sites-available/default -- nginx internal routes, from port 80 to 8000
+/etc/nginx/sites-enabled/default -- system linked to sites available
+/var/log/nginx/error.log -- check which errors were served to the visitors/in nginx 
+/var/log/nginx/access.log -- check which users visited website
+
+uWSGI server - internal server that starts up a flask app per visitor.
+/etc/systemd/system/main.service -- service that keeps uWSGI server running
+~/face_rec/flask/main.ini -- uWSGI configuration file refers to wsgi.py down below.
+~/face_rec/flask/main.socket -- connection tunnel between uWSGI and Flak
+
+Flask app - the actual python3 based application
+~/face_rec/flask/wsgi.py -- tells uWSGI server how to interact with the application
+~/face_rec/flask/main.py -- starts up flask app
+~/face_rec/flask/face_compare.py
+~/face_rec/flask/create_encodings.py
+~/face_rec/flask/browse_casts.py
+
+Virtual Environment with packages
+~/face_rec/flask/venv
+
+Web Content - content to be served on website
+~/face_rec/flask/static
+~/face_rec/flask/templates
+```
+
+
+
+```
+Nginx - Web server receiving external requests
+/etc/nginx/nginx.conf -- nginx settings external to internal routing
+/etc/nginx/uswgi.params -- standard parameters mapping for nginx to uwsgi communication
+/etc/nginx/sites-available/default -- nginx internal routes, from port 80 to 8000
+/etc/nginx/sites-enabled/default -- system linked to sites available
+/var/log/nginx/error.log -- check which errors were served to the visitors/in nginx 
+/var/log/nginx/access.log -- check which users visited website
+
+Gunicorn - internal server that starts up a flask app per visitor.
+/etc/systemd/system/main.service -- service that keeps Gunicorn server running
+~/face_rec/flask/main.socket -- connection tunnel between Gunicorn and Flask
+
+Flask app - the actual python3 based application
+~/face_rec/flask/wsgi.py -- tells Gunicorn server how to interact with the application
+~/face_rec/flask/main.py -- starts up flask app
+~/face_rec/flask/face_compare.py
+~/face_rec/flask/create_encodings.py
+~/face_rec/flask/browse_casts.py
+
+Virtual Environment with packages
+~/face_rec/flask/venv
+
+Web Content - content to be served on website
+~/face_rec/flask/static
+~/face_rec/flask/templates
+```
+
+
+
+
+
+Service to start uWSGI instance to serve app
+```
+
+Create file and use sudo service main start/enable which creates the main.socket file
+
+```
+[Unit]
+Description=uWSGI instance to serve main
+After=network.target
+
+[Service]
+User=mauricerichard91
+Group=nginx
+WorkingDirectory=/home/mauricerichard91/face_rec/flask/
+Environment="PATH=/home/mauricerichard91/face_rec/flask/venv/bin"
+ExecStart=/home/mauricerichard91/face_rec/flask/venv/bin/uwsgi --i$
+
+[Install]
+WantedBy=multi-user.target
+
+
+### Managing the VM
+
+Nginx
+To start servicing external requests. 
+sudo service nginx start/stop/restart
+
+If you encounter any errors on the website, trying checking the following:
+sudo less /var/log/nginx/error.log : checks the Nginx error logs.
+sudo less /var/log/nginx/access.log : checks the Nginx access logs.
+sudo journalctl -u nginx : checks the Nginx process logs.
+sudo journalctl -u main: checks your Flask app's uWSGI logs.
+
+sudo nano /etc/systemd/system/myproject.service
+
+Gunicorn
+
+
+Flask 
+
+
+
+## Nginx
+
+
+
+
+
+
+#### Sidenote 
+Creating cookiecutter templates:
+```
+pip3 install cookiecutter
+mkdir HelloCookieCutter1
+cd HelloCookieCutter1
+mkdir {{cookiecutter.directory_name}}
+cd {{cookiecutter.directory_name}}
+cat > {{cookiecutter.file_name}}.py << EOF
+print("Hello, {{cookiecutter.greeting_recipient}}!")
+EOF
+```
+```
+cd ..
+cat > cookiecutter.json << EOF
+{
+    "directory_name": "Hello",
+    "file_name": "Howdy",
+    "greeting_recipient": "Julie"
+}
+EOF
+```
+  
+## Appendix I: General explanation of web framework  
 1. Web Frameworks & Flask  
 2. Serving Flask applications
    1. WSGI server
    2. Web server
    3. Templating engine
-3. Compute Engine Setup 
 
 #### Web Frameworks & Flask
 Broadly speaking, a web framework consists of a set of libraries and a main handler within which you can build custom code to implement a web application (i.e. an interactive web site). Most web frameworks include patterns and utilities to accomplish at least the following:
@@ -55,121 +197,4 @@ Some general good practices apply to the part of the application passing dynamic
 *  Template files should be passed only the dynamic content that is needed for rendering the template. Avoid the temptation to pass additional content “just in case”: it is easier to add some missing variable when needed than to remove a likely unused variable later.
 *  Many template engines allow for complex statements or assignments in the template itself, and many allow some Python code to be evaluated in the templates. This convenience can lead to uncontrolled increase in complexity, and often make it harder to find bugs.
 
-## Compute engine setup
-
-We will set up a compute engine with python 3.7 and flask for the app, gunicorn for the wsgi server and nginx as web server.
-For initial set up we will use an image of our already used compute engine. << insert instruction to go from scratch to this new vm, includes DLIB so a PITA >>
-
-
-### Component and relevant file overview
-
-```
-Nginx - Web server receiving external requests
-/etc/nginx/nginx.conf -- nginx settings external to internal routing
-/etc/nginx/uswgi.params -- standard parameters mapping for nginx to uwsgi communication
-/etc/nginx/sites-available/default -- nginx internal routes, from port 80 to 8000
-/etc/nginx/sites-enabled/default -- system linked to sites available
-/var/log/nginx/error.log -- check which errors were served to the visitors/in nginx 
-/var/log/nginx/access.log -- check which users visited website
-
-uWSGI server - internal server that starts up a flask app per visitor.
-/etc/systemd/system/main.service -- service that keeps uWSGI server running
-~/face_rec/flask/main.ini -- uWSGI configuration file refers to wsgi.py down below.
-~/face_rec/flask/main.socket -- connection tunnel between uWSGI and Flak
-
-Flask app - the actual python3 based application
-~/face_rec/flask/wsgi.py -- tells uWSGI server how to interact with the application
-~/face_rec/flask/main.py -- starts up flask app
-~/face_rec/flask/face_compare.py
-~/face_rec/flask/create_encodings.py
-~/face_rec/flask/browse_casts.py
-
-Virtual Environment with packages
-~/face_rec/flask/venv
-
-Web Content - content to be served on website
-~/face_rec/flask/static
-~/face_rec/flask/templates
-```
-
-
-
-
-
-
-
-Service to start uWSGI instance to serve app
-```
-
-Create file and use sudo service main start/enable which creates the main.socket file
-
-```
-[Unit]
-Description=uWSGI instance to serve main
-After=network.target
-
-[Service]
-User=mauricerichard91
-Group=nginx
-WorkingDirectory=/home/mauricerichard91/face_rec/flask/
-Environment="PATH=/home/mauricerichard91/face_rec/flask/venv/bin"
-ExecStart=/home/mauricerichard91/face_rec/flask/venv/bin/uwsgi --i$
-
-[Install]
-WantedBy=multi-user.target
-```
-
-
-
-Managing the VM
-
-```
-Useful commands:
-To start servicing external requests. 
-sudo service nginx start/stop/restart
-
-If you encounter any errors on the website, trying checking the following:
-sudo less /var/log/nginx/error.log : checks the Nginx error logs.
-sudo less /var/log/nginx/access.log : checks the Nginx access logs.
-sudo journalctl -u nginx : checks the Nginx process logs.
-sudo journalctl -u main: checks your Flask app's uWSGI logs.
-
-sudo nano /etc/systemd/system/myproject.service
-
-
-
-Flask app 
-
-
-
-## Nginx
-
-
-
-
-
-
-#### Sidenote 
-Creating cookiecutter templates:
-```
-pip3 install cookiecutter
-mkdir HelloCookieCutter1
-cd HelloCookieCutter1
-mkdir {{cookiecutter.directory_name}}
-cd {{cookiecutter.directory_name}}
-cat > {{cookiecutter.file_name}}.py << EOF
-print("Hello, {{cookiecutter.greeting_recipient}}!")
-EOF
-```
-```
-cd ..
-cat > cookiecutter.json << EOF
-{
-    "directory_name": "Hello",
-    "file_name": "Howdy",
-    "greeting_recipient": "Julie"
-}
-EOF
-```
-```
 
