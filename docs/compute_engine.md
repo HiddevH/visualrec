@@ -7,14 +7,14 @@ output: html_document
 This repository is for a project focused on using facial recognition in a python/flask app.
 To explain how the application works, first we quickly dive into the inner workings of a general web framework on Python.
 
-1. Web Frameworks
-2. Flask
-3. Serving Flask applications
+1. Web Frameworks & Flask  
+2. Serving Flask applications
    1. WSGI server
    2. Web server
    3. Templating engine
+3. Compute Engine Setup 
 
-#### Web Frameworks
+#### Web Frameworks & Flask
 Broadly speaking, a web framework consists of a set of libraries and a main handler within which you can build custom code to implement a web application (i.e. an interactive web site). Most web frameworks include patterns and utilities to accomplish at least the following:
 
 * **URL Routing**  
@@ -29,7 +29,6 @@ Allows for separating Python code implementing an application’s logic from the
 * **Development Web Server**  
 Runs an HTTP server on development machines to enable rapid development; often automatically reloads server-side code when files are updated
 
-#### Flask
 Flask is a “microframework” for Python, and is an excellent choice for building smaller applications, APIs, and web services.
 Building an app with Flask is a lot like writing standard Python modules, except some functions have routes attached to them.
 
@@ -56,7 +55,6 @@ Some general good practices apply to the part of the application passing dynamic
 *  Template files should be passed only the dynamic content that is needed for rendering the template. Avoid the temptation to pass additional content “just in case”: it is easier to add some missing variable when needed than to remove a likely unused variable later.
 *  Many template engines allow for complex statements or assignments in the template itself, and many allow some Python code to be evaluated in the templates. This convenience can lead to uncontrolled increase in complexity, and often make it harder to find bugs.
 
-
 ## Compute engine setup
 
 We will set up a compute engine with python 3.7 and flask for the app, gunicorn for the wsgi server and nginx as web server.
@@ -65,8 +63,8 @@ For initial set up we will use an image of our already used compute engine. << i
 
 ### Component and relevant file overview
 
-Nginx 
 ```
+Nginx - Web server receiving external requests
 /etc/nginx/nginx.conf -- nginx settings external to internal routing
 /etc/nginx/uswgi.params -- standard parameters mapping for nginx to uwsgi communication
 /etc/nginx/sites-available/default -- nginx internal routes, from port 80 to 8000
@@ -74,23 +72,34 @@ Nginx
 /var/log/nginx/error.log
 /var/log/nginx/access.log
 
-Useful commands:
-To start servicing external requests. 
-sudo service nginx start/stop/restart
+uWSGI server - internal server that starts up flask apps per request.
+/etc/systemd/system/main.service -- service that keeps uWSGI server running
+~/face_rec/flask/main.ini -- uWSGI configuration file refers to wsgi.py
+~/face_rec/flask/main.socket -- connection tunnel created when starting/enabling main.service
 
-If you encounter any errors on the website, trying checking the following:
-sudo less /var/log/nginx/error.log : checks the Nginx error logs.
-sudo less /var/log/nginx/access.log : checks the Nginx access logs.
-sudo journalctl -u nginx : checks the Nginx process logs.
-sudo journalctl -u main: checks your Flask app's uWSGI logs.
+Flask app - the actual python based application
+~/face_rec/flask/wsgi.py -- tells uWSGI server how to interact with the application
+~/face_rec/flask/main.py -- starts up flask app
+~/face_rec/flask/face_compare.py
+~/face_rec/flask/create_encodings.py
+~/face_rec/flask/browse_casts.py
+
+Virtual Environment with packages
+~/face_rec/flask/venv
+
+Web Content - content to be served on website
+~/face_rec/flask/static
+~/face_rec/flask/templates
+
+
 ```
+
 
 Service to start uWSGI instance to serve app
 ```
-sudo nano /etc/systemd/system/myproject.service
 
+Create file and use sudo service main start/enable which creates the main.socket file
 
-```
 ```
 [Unit]
 Description=uWSGI instance to serve main
@@ -107,6 +116,26 @@ ExecStart=/home/mauricerichard91/face_rec/flask/venv/bin/uwsgi --i$
 WantedBy=multi-user.target
 ```
 
+
+
+Managing the VM
+
+```
+Useful commands:
+To start servicing external requests. 
+sudo service nginx start/stop/restart
+
+If you encounter any errors on the website, trying checking the following:
+sudo less /var/log/nginx/error.log : checks the Nginx error logs.
+sudo less /var/log/nginx/access.log : checks the Nginx access logs.
+sudo journalctl -u nginx : checks the Nginx process logs.
+sudo journalctl -u main: checks your Flask app's uWSGI logs.
+
+sudo nano /etc/systemd/system/myproject.service
+
+
+
+```
 
 
 main.ini
