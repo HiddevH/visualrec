@@ -62,8 +62,14 @@ If you encounter any errors on the website, try checking the following:
 sudo less /var/log/nginx/error.log : checks the Nginx error logs.
 sudo less /var/log/nginx/access.log : checks the Nginx access logs.
 sudo systemctl status nginx  : checks the Nginx process logs.
+sudo systemctl start/stop/restart nginx  : to start server again.
 
-sudo systemctl start/stop/restart nginx 
+# check port forwarding file
+sudo nano /etc/nginx/sites-available/default
+# link the two files (shouldnt be needed)
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled
+# test syntax of file
+sudo nginx -t
 ```
 
 Gunicorn
