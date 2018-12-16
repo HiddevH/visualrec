@@ -56,3 +56,110 @@ Some general good practices apply to the part of the application passing dynamic
 *  Template files should be passed only the dynamic content that is needed for rendering the template. Avoid the temptation to pass additional content “just in case”: it is easier to add some missing variable when needed than to remove a likely unused variable later.
 *  Many template engines allow for complex statements or assignments in the template itself, and many allow some Python code to be evaluated in the templates. This convenience can lead to uncontrolled increase in complexity, and often make it harder to find bugs.
 
+
+## Compute engine setup
+
+We will set up a compute engine with python 3.7 and flask for the app, gunicorn for the wsgi server and nginx as web server.
+For initial set up we will use an image of our already used compute engine. << insert instruction to go from scratch to this new vm, includes DLIB so a PITA >>
+
+
+### Component and relevant file overview
+
+Nginx 
+```
+/etc/nginx/nginx.conf -- nginx settings external to internal routing
+/etc/nginx/uswgi.params -- standard parameters mapping for nginx to uwsgi communication
+/etc/nginx/sites-available/default -- nginx internal routes, from port 80 to 8000
+/etc/nginx/sites-enabled/default -- system linked to sites available
+/var/log/nginx/error.log
+/var/log/nginx/access.log
+
+Useful commands:
+To start servicing external requests. 
+sudo service nginx start/stop/restart
+
+If you encounter any errors on the website, trying checking the following:
+sudo less /var/log/nginx/error.log : checks the Nginx error logs.
+sudo less /var/log/nginx/access.log : checks the Nginx access logs.
+sudo journalctl -u nginx : checks the Nginx process logs.
+sudo journalctl -u main: checks your Flask app's uWSGI logs.
+```
+
+Service to start uWSGI instance to serve app
+```
+sudo nano /etc/systemd/system/myproject.service
+
+
+```
+```
+[Unit]
+Description=uWSGI instance to serve main
+After=network.target
+
+[Service]
+User=mauricerichard91
+Group=nginx
+WorkingDirectory=/home/mauricerichard91/face_rec/flask/
+Environment="PATH=/home/mauricerichard91/face_rec/flask/venv/bin"
+ExecStart=/home/mauricerichard91/face_rec/flask/venv/bin/uwsgi --i$
+
+[Install]
+WantedBy=multi-user.target
+```
+
+
+
+main.ini
+main.sock
+
+
+
+
+
+
+
+~face_rec/flask
+face_compare.py
+main.py -- main flask app script
+
+main.ini -- creates socket for service  
+wsgi.py -- entry point for WSGI server 
+
+
+
+
+Flask app 
+
+
+
+## Nginx
+
+
+
+
+
+
+#### Sidenote 
+Creating cookiecutter templates:
+```
+pip3 install cookiecutter
+mkdir HelloCookieCutter1
+cd HelloCookieCutter1
+mkdir {{cookiecutter.directory_name}}
+cd {{cookiecutter.directory_name}}
+cat > {{cookiecutter.file_name}}.py << EOF
+print("Hello, {{cookiecutter.greeting_recipient}}!")
+EOF
+```
+```
+cd ..
+cat > cookiecutter.json << EOF
+{
+    "directory_name": "Hello",
+    "file_name": "Howdy",
+    "greeting_recipient": "Julie"
+}
+EOF
+```
+```
+
