@@ -64,6 +64,9 @@ sudo less /var/log/nginx/access.log : checks the Nginx access logs.
 sudo systemctl status nginx  : checks the Nginx process logs.
 sudo systemctl start/stop/restart nginx  : to start server again.
 
+# check nginx conf file
+sudo nano /etc/nginx/nginx.conf
+
 # check port forwarding file
 sudo nano /etc/nginx/sites-available/default
 # link the two files (shouldnt be needed)
