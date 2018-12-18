@@ -13,6 +13,7 @@ from browse_casts import get_browse_casts
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'} # Alleen plaatjes mogen gebruikt worden
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = "winteriscoming"
 
 def allowed_file(filename): # Check of file-extension toegestaan is
     return '.' in filename and \
