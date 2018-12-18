@@ -69,10 +69,16 @@ sudo nano /etc/nginx/nginx.conf
 
 # check port forwarding file
 sudo nano /etc/nginx/sites-available/default
-# link the two files (shouldnt be needed)
-sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled
+
 # test syntax of file
 sudo nginx -t
+
+# link the two files (shouldnt be needed)
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled
+
+# check proxy parameters (likely no issue)
+sudo nano /etc/nginx/proxy_params 
+
 ```
 
 Gunicorn
