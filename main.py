@@ -40,7 +40,11 @@ def upload_image():
 
         if file and allowed_file(file.filename):
             # Image is geldig, we runnen het face_recog script en krijgen de naam + bestandsnaam van de match terug
-            session['results'] = face_recog(file) # Returns dict met {cast : bijhorende match}
+            results, error = face_recog(file)  # Returns dict met {cast : bijhorende match} en evt error message
+            if len(error) > 1:  # If the error variable contains a message
+                return render_template('upload.html', error=error)  # Let the user upload another photo
+
+            session['results'] = results
             app.permanent_session_lifetime = timedelta(minutes=10)  # Bewaar de resultaten voor 10 min
             session.permanent = False  # Vernietig de session bij browser quit
             return redirect(url_for('result')) #render_template('result.html', selected_cast=selected_cast, name=results[selected_cast])

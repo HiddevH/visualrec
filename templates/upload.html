@@ -5,8 +5,11 @@
 <header class="masthead">
   <div class="container d-flex h-100 align-items-center">
     <div class="mx-auto text-center">
+    	{% if error %}
+        	<p class=error><strong>Error:</strong> {{ error }}
+      	{% endif %}
       <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="file">
+        <input type="file" name="file"><br>
         <input class="btn btn-primary js-scroll-trigger" type="submit" value="Upload">
     </div>
   </div>
