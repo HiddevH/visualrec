@@ -9,6 +9,7 @@ Created on Thu Sep 20 11:29:13 2018
 from flask import Flask, jsonify, request, redirect, render_template, url_for, session
 from face_compare import face_recog
 from browse_casts import get_browse_casts
+from datetime import timedelta
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'} # Alleen plaatjes mogen gebruikt worden
 

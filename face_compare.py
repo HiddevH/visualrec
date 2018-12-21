@@ -24,7 +24,7 @@ def face_recog(usr_image):
 
     rootdir = Path('static')
     exclude_dir = ['nietdezefolder']  # If you want to exclude some paths
-    cast_list = [str(f) for f in rootdir.glob('casts/*')  # If f is a folder in casts 
+    cast_list = [str(f) for f in rootdir.glob('casts/*')  # If f is a folder in casts
                          if f.is_dir() and str(f) not in exclude_dir]  # and not in exclude_dir, we put it in file_list
 
     results = {}  # We want to store a result for each cast, in a dict
@@ -37,7 +37,7 @@ def face_recog(usr_image):
     elif len(unknown_image_encodings) > 1:  # if more than one faces are deteced
         error = 'Multiple faces detected in the image. Please upload a photo with one face.'
     else:
-        unknown_face_encoding = unknown_image_encodings[0] # Face_recognition op unknown
+        unknown_encoding = unknown_image_encodings[0] # Face_recognition op unknown
 
         for cast_folder in cast_list:
             # < THIS CODE IS MOSTLY SAME AS create_encodings.py >
@@ -49,10 +49,10 @@ def face_recog(usr_image):
                     known_image_encodings = pickle.load(encoded_cast)
             except IOError: # If it doesn't exist, send an email to tech support? :-D
                 from error_email import errormail
-                subject = f'IMAGINE_DS: Error occured in face_compare.py' 
-                message = f'User tried loading the cast of {cast_folder} but failed.' 
+                subject = f'IMAGINE_DS: Error occured in face_compare.py'
+                message = f'User tried loading the cast of {cast_folder} but failed.'
                 errormail(subject=subject, msg=message)
-                
+
 
             print(f'Scanning faces in {cast}')
 
@@ -71,4 +71,3 @@ def face_recog(usr_image):
 
 if __name__ == "__main__":
     face_recog('donald.jpg')
-
