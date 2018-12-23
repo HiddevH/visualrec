@@ -141,7 +141,7 @@ https://certbot.eff.org/lets-encrypt/debianstretch-nginx
 
 ```
 sudo apt-get install python-certbot-nginx -t stretch-backports
-sudo certbox --nginx
+sudo certbot --nginx -d www.doppel-ganger.me -d doppel-ganger.me
 ```
 
 Results
@@ -165,6 +165,7 @@ Edit /etc/nginx/nginx.conf
 ```
 user  nginx;
 worker_processes  3;
+
 error_log  /var/log/nginx/error.log warn;
 pid        /var/run/nginx.pid;
 
@@ -175,32 +176,27 @@ events {
 http {
     include       /etc/nginx/mime.types;
     default_type  application/octet-stream;
+
     log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
                       '$status $body_bytes_sent "$http_referer" '
                       '"$http_user_agent" "$http_x_forwarded_for"';
+
     access_log  /var/log/nginx/access.log  main;
     sendfile        on;
     keepalive_timeout  65;
     include /etc/nginx/conf.d/*.conf;
     client_body_buffer_size     20M;
-    client_max_body_size        20M;
-     
+    client_max_body_size        10M;
+
     server {
-        listen 80;
-        listen [::]:80;
-        server_name www.doppel-ganger.me;
-        return 301 https://$server_name$request.uri;
-    }
-    
-    server {
+        server_name doppel-ganger.me;
         listen 443 ssl default_server;
         listen [::]:443 default_server;
-        server_name www.doppel-ganger.me;
-        ssl_certificate /etc/letsencrypt/live/www.doppel-ganger.me/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/www.doppel-ganger.me/privkey.pem;
+        ssl_certificate /etc/letsencrypt/live/doppel-ganger.me/fullchain.pem; # managed by Certbot
+        ssl_certificate_key /etc/letsencrypt/live/doppel-ganger.me/privkey.pem; # managed by Certbot
         include /etc/letsencrypt/options-ssl-nginx.conf;
         ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
-    
+
         location / {
             include proxy_params;
             proxy_read_timeout 300;
@@ -208,8 +204,14 @@ http {
             proxy_pass http://unix:/home/mauricerichard91/face_rec/flask/main.sock;
         }
     }
-}
 
+    server {
+        listen 80;
+        listen [::]:80;
+        server_name doppel-ganger.me www.doppel-ganger.me;
+        return 301 https://www.doppel-ganger.me;
+    }
+}
 ```
 
 
