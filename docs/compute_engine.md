@@ -134,6 +134,90 @@ visitor==0.1.3
 Werkzeug==0.14.1
 ```
 
+### Adding HTTPS
+
+Follow instruction on:
+https://certbot.eff.org/lets-encrypt/debianstretch-nginx
+
+```
+sudo apt-get install python-certbot-nginx -t stretch-backports
+sudo certbox --nginx
+```
+
+Results
+```
+IMPORTANT NOTES:
+ - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/www.doppel-ganger.me/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/www.doppel-ganger.me/privkey.pem
+   Your cert will expire on 2019-03-23. To obtain a new or tweaked
+   version of this certificate in the future, simply run certbot again
+   with the "certonly" option. To non-interactively renew *all* of
+   your certificates, run "certbot renew"
+ - Your account credentials have been saved in your Certbot
+   configuration directory at /etc/letsencrypt. You should make a
+   secure backup of this folder now. This configuration directory will
+   also contain certificates and private keys obtained by Certbot so
+   making regular backups of this folder is ideal.
+```
+Edit /etc/nginx/nginx.conf
+```
+user  nginx;
+worker_processes  3;
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+    access_log  /var/log/nginx/access.log  main;
+    sendfile        on;
+    keepalive_timeout  65;
+    include /etc/nginx/conf.d/*.conf;
+    client_body_buffer_size     20M;
+    client_max_body_size        20M;
+     
+    server {
+        listen 80;
+        listen [::]:80;
+        server_name www.doppel-ganger.me;
+        return 301 https://$server_name$request.uri;
+    }
+    
+    server {
+        listen 443 ssl default_server;
+        listen [::]:443 default_server;
+        server_name www.doppel-ganger.me;
+        ssl_certificate /etc/letsencrypt/live/www.doppel-ganger.me/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/www.doppel-ganger.me/privkey.pem;
+        include /etc/letsencrypt/options-ssl-nginx.conf;
+        ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+    
+        location / {
+            include proxy_params;
+            proxy_read_timeout 300;
+            proxy_connect_timeout 300;
+            proxy_pass http://unix:/home/mauricerichard91/face_rec/flask/main.sock;
+        }
+    }
+}
+
+```
+
+
+
+
+
+
+
 
 ## Appendix I: General explanation of web framework  
 1. Web Frameworks & Flask  
