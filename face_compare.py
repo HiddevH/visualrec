@@ -9,18 +9,62 @@ Installeer de benodigde packages
     !pip install face_recognition
 """
 
+import PIL
+from PIL.ExifTags import TAGS as EXIFTAGS
+import face_recognition
+import pickle
+import numpy as np
+import re
+from pathlib import Path
+import os
+
+def rotate_convert_image(file, mode='RGB'):
+    """
+    Images uploaded by Mobile OS usually are rotated in some way (EXIF), 
+    this causes the script to not find any matches.
+    This script checks if an EXIF tag exists, then fixes correspondingly.
+    Then converts an image file (.jpg, .png, etc) into a numpy array
+    :param file: image file name or file object to load
+    :param mode: format to convert the image to. Only 'RGB' (8-bit RGB, 3 channels) and 'L' (black and white) are supported.
+    :return: image contents as numpy array
+    """
+
+    image = PIL.Image.open(file) # Open the image with PIL
+
+    # If no ExifTags, no rotating needed.
+    try:
+       # Grab orientation value.
+       image_exif = image._getexif()
+       image_orientation = image_exif[274]
+
+       # Rotate depending on orientation.
+       if image_orientation == 2:
+          image = image.transpose(PIL.Image.FLIP_LEFT_RIGHT)
+       if image_orientation == 3:
+          image = image.transpose(PIL.Image.ROTATE_180)
+       if image_orientation == 4:
+          image = image.transpose(PIL.Image.FLIP_TOP_BOTTOM)
+       if image_orientation == 5:
+          image = image.transpose(PIL.Image.FLIP_LEFT_RIGHT).transpose(PIL.Image.ROTATE_90)
+       if image_orientation == 6:
+          image = image.transpose(PIL.Image.ROTATE_270)
+       if image_orientation == 7:
+          image = image.transpose(PIL.Image.FLIP_TOP_BOTTOM).transpose(PIL.Image.ROTATE_90)
+       if image_orientation == 8:
+          image = image.transpose(PIL.Image.ROTATE_90)
+    except:
+       pass
+
+    if mode:
+        image = image.convert(mode)  # Format the image
+    return np.array(image)  # Return numpy array of image
+
+
 def face_recog(usr_image):
     """
     Scans photo uploaded by User and detects faces.
     If only one face is found, we use it to match with casts.
     Otherwise, this function returns an empty dict and an error message."""
-    import face_recognition
-    import pickle
-    import numpy as np
-    import re
-    from pathlib import Path
-    import os
-
 
     rootdir = Path('static')
     exclude_dir = ['nietdezefolder']  # If you want to exclude some paths
@@ -30,7 +74,7 @@ def face_recog(usr_image):
     results = {}  # We want to store a result for each cast, in a dict
     error = '' # Empty error message
     unknown = usr_image # Dit is het geüploade bestand
-    unknown_image = face_recognition.load_image_file(unknown)
+    unknown_image = rotate_convert_image(unknown) # Rotate and convert image to numpy array
     unknown_image_encodings = face_recognition.face_encodings(unknown_image)
     if len(unknown_image_encodings) == 0:  # if no faces are detected
         error = 'No faces detected in the image. Please try another photo.'
