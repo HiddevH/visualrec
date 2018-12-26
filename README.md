@@ -14,19 +14,3 @@ Install atom from https://atom.io/ and from the application homepage "install pa
 Then "packages -> remote atom -> start server"  
 Then use sudo ratom exampletext.txt command on VM to edit files locally.     
 
-## To do list
-
-* Allow someone to upload a picture and the go to the browse page to select the casts. The image preferably isn't stored but kept in memory. Need links on browse buttons to pictures.
-
-
-
-#### Input
-
-Name | Description
------------------- | -------------------------------------------------
-test | test
-
-
-## Acknowledgments
-
-
