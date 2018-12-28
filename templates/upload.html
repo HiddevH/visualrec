@@ -5,6 +5,7 @@
 <header class="masthead">
   <div class="container d-flex h-100 align-items-center">
     <div class="mx-auto text-center">
+      <h1 class="mx-auto my-0">Upload your photo</h1><br><br>
     	{% if error %}
         	<p class=error><strong>Error:</strong> {{ error }}
       	{% endif %}
@@ -14,8 +15,13 @@
             <input type="file" name="file">
         </div>
             <input class="btn btn-primary js-scroll-trigger" type="submit" value="Upload">
+        <br><br><br><br><br>
+        <p class="text-justify">
+        Upload your photo to see which TV show character most closely resembles you!
+        <br>
+        Note: your uploaded photo is deleted immediately after scanning it. We do <span style="font-weight: 900;">NOT</span> store this information and never intend to!
+      </p>
     </div>
   </div>
-
 </header>
 {% endblock %}

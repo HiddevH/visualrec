@@ -8,7 +8,7 @@ Created on Thu Sep 20 11:29:13 2018
 
 from flask import Flask, jsonify, request, redirect, render_template, url_for, session
 from face_compare import face_recog
-from browse_casts import get_browse_casts
+from browse_casts import get_browse_casts, get_cast_count
 from datetime import timedelta
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'} # Alleen plaatjes mogen gebruikt worden
@@ -69,8 +69,9 @@ def browse():
     if request.method == 'POST': # Check if user selected cast
         session['selected_cast'] = request.form['selected_cast']
         return redirect(url_for('result'))
-    browsable_casts = get_browse_casts()
-    return render_template('browse.html', casts=browsable_casts, len=len(browsable_casts))
+    browsable_casts = get_browse_casts()  # Get a list of all browsable casts
+    cast_count = get_cast_count()  # Get the dict with the amount of characers in each cast
+    return render_template('browse.html', casts=browsable_casts, len=len(browsable_casts), cast_count=cast_count)
 
 @app.route('/about_us')
 def about_us():

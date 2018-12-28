@@ -21,13 +21,19 @@
                         <button name='selected_cast' type="submit" class="btn btn-secondary btn-sm selected_cast" value="{{ casts[i] }}" id="{{ casts[i] }}">Compare!</button>
                       </form>
                   </div>
-                  <small class="text-muted">9 cast members</small>
+                  <small class="text-muted">{{ cast_count[casts[i]] }} cast members</small>
                 </div>
               </div>
             </div>
           </div>
         {% endfor %}
       </div>
+      <h1 class="mx-auto my-0">How it works</h1>
+      <p class="text-black mx-auto mt-2 mb-5">
+        Select your favorite TV show or movie cast and upload a photo to see who most closely resembles you!
+        We use face recognition technologies to compare your uploaded face to the ones we made available. The more members a cast contains, the higher the chance of a really similar looking match! More and more TV shows and movies are added periodically, so make sure to revisit us once in a while! <br>
+        Note: your uploaded photo is deleted immediately after scanning it. We do <span style="font-weight: 900;">NOT</span> store this information and never intend to! The results of this process is stored in a cookie on your computer for your convenience, and is deleted automatically after 10 minutes or when your browser is closed.
+      </p>
     </div>
   </main>
 {% endblock %}
