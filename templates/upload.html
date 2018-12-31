@@ -10,11 +10,19 @@
         	<p class=error><strong>Error:</strong> {{ error }}
       	{% endif %}
 
-        <div class="form-group">
-          <form method="POST" enctype="multipart/form-data">
-            <input type="file" name="file">
+        <div  id="loading"><br><br><br>
+           <p class="text-center">
+            Analyzing image..
+           </p>
         </div>
-            <input class="btn btn-primary js-scroll-trigger" type="submit" value="Upload">
+        <div id="content">
+          <div class="form-group">
+            <form method="POST" enctype="multipart/form-data">
+              <input type="file" name="file"> <br><br>
+              <input class="btn btn-primary js-scroll-trigger" type="submit" value="Upload" onclick="loading();">
+            </form>
+          </div>
+        </div>
         <br><br><br><br><br>
         <p class="text-justify">
         Upload your photo to see which TV show character most closely resembles you!

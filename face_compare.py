@@ -92,6 +92,7 @@ def face_recog(usr_image):
                 with open(encoding_path, 'rb') as encoded_cast:
                     known_image_encodings = pickle.load(encoded_cast)
             except IOError: # If it doesn't exist, send an email to tech support? :-D
+            # We need to revamp this 
                 from error_email import errormail
                 subject = f'IMAGINE_DS: Error occured in face_compare.py'
                 message = f'User tried loading the cast of {cast_folder} but failed.'

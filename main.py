@@ -6,15 +6,27 @@ Created on Thu Sep 20 11:29:13 2018
 # Face Recognition with Flask, wohoo!
 # Thanks for the example @ Aegitgey https://github.com/ageitgey/
 
-from flask import Flask, jsonify, request, redirect, render_template, url_for, session
+from flask import Flask, jsonify, request, redirect, render_template, url_for, session, flash
+from flask_mail import Message, Mail
 from face_compare import face_recog
 from browse_casts import get_browse_casts, get_cast_count
 from datetime import timedelta
-
+from forms import ContactForm
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'} # Alleen plaatjes mogen gebruikt worden
+
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "winteriscoming"
+
+# Configure email
+mail = Mail()
+app.config["MAIL_SERVER"] = "smtp.gmail.com"
+app.config["MAIL_PORT"] = 465
+app.config["MAIL_USE_SSL"] = True
+app.config["MAIL_USERNAME"] = 'imagine.datascience@gmail.com'
+app.config["MAIL_PASSWORD"] = 'mauriceisstom'
+mail.init_app(app)
 
 def allowed_file(filename): # Check of file-extension toegestaan is
     return '.' in filename and \
@@ -76,6 +88,32 @@ def browse():
 @app.route('/about_us')
 def about_us():
     return render_template('about_us.html')
+
+
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    form = ContactForm()
+ 
+    if request.method == 'POST':
+        if form.validate() == False:
+            flash('All fields are required.')
+            return render_template('contact.html', form=form)
+        else:
+            msg = Message(form.subject.data, sender='contact@example.com', recipients=['your_email@example.com'])
+            msg.body = """
+            From: %s &lt;%s&gt;
+            %s
+            """ % (form.name.data, form.email.data, form.message.data)
+            mail.send(msg)
+            return render_template('contact.html', success=True)
+ 
+    elif request.method == 'GET':
+        return render_template('contact.html', form=form)
+
+
+@app.route('/privacy-policy')
+def privacy_policy():
+    return render_template('privacy-policy.html')
 
 if __name__ == "__main__":
     app.config['SECRET_KEY'] = "winteriscoming"
