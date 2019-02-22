@@ -71,16 +71,15 @@ def create_encodings(search_term=''):
     cast_list = [str(f) for f in rootdir.glob('casts/*')  # If f is a folder in casts
                          if f.is_dir() and search_term in str(f)]  # and not in exclude_dir, we put it in file_list
 
-
     for cast_folder in cast_list:
         cast = os.path.basename(os.path.normpath(cast_folder))  # strip the directory path from the cast_folder
         encoding_path =  Path(rootdir) / 'encodings' / f'{cast}_encodings.p'
         print(f'trying encode for: {cast}..')
 
         try:  # Try encoding to encoding_path
-            with open(encoding_path, 'rb') as encoded_cast:
-                load_cast(cast_folder, encoding_path)  # Create encodings for the cast
-                print(f'created encoding for {cast}!')
+            #with open(encoding_path, 'rb') as encoded_cast:
+            load_cast(cast_folder, encoding_path)  # Create encodings for the cast
+            print(f'created encoding for {cast}!')
         except OSError :  # If an error occurs, show message
             print('Something went wrong..')
 
