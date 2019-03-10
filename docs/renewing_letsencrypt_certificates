@@ -1,0 +1,10 @@
+# 10-3-2019 trying to renew let's encrypt certificates
+# certbot not installed on loadbalancer node
+# 
+# following https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04
+sudo apt-get install -y software-properties-common
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get install dirmngr
+sudo apt install python-certbot-nginx
+sudo certbot renew --dry-run
+sudo certbot renew
