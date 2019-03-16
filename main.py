@@ -32,7 +32,9 @@ def allowed_file(filename): # Check of file-extension toegestaan is
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-#selected_cast = 'Game_of_Thrones' # Deze variabele moet eigenlijk uit browse.html komen
+
+# Deze variabele moet eigenlijk uit session storage browse.html komen, maar deze versie gebruiken we alleen GoT, dus browse.html komt niet in de loop
+selected_cast = 'Game of Thrones'  
 
 @app.route('/')
 @app.route('/index')
@@ -68,10 +70,10 @@ def upload_image():
 def result():
     if 'results' not in session: # Als er nog geen results dict is, laad de upload pagina
         return redirect(url_for('upload_image'))
-    elif 'selected_cast' not in session:
-        return redirect(url_for('browse'))
+    #elif 'selected_cast' not in session:  # Als er nog geen cast geselecteerd is, ga naar browse
+        #return redirect(url_for('browse'))
 
-    selected_cast = session['selected_cast']
+    # selected_cast = session['selected_cast'] als we deze variable uit de session willen halen
     import time
     time.sleep(1)
     return render_template('result.html', selected_cast=selected_cast, name=session['results'][selected_cast]) # Anders, toon resultaten
