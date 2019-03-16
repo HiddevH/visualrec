@@ -39,8 +39,8 @@ def log_error(e):
     """
     print(e)
 
-raw_html = open('GoT Deaths.html').read()
-html = BeautifulSoup(raw_html, 'html.parser')
+raw_html = open('GoT Deaths.html').read()  # Open the html file of the GoT deaths page found at https://deathtimeline.com/
+html = BeautifulSoup(raw_html, 'html.parser')  # Parse it with BS4
 
 # counter = 0
 # for name in html.select('h3'):
@@ -49,5 +49,9 @@ html = BeautifulSoup(raw_html, 'html.parser')
 
 counter = 0
 for name in html.find_all("div", {"class" : "death-right"}):
-    print(f"{counter}: {name.h3.text}")
+    """In the div class 'death-right', we print the h3, which contains the name.
+        h4 contains how he died, we want that too"""
+    print(f"{counter}: {name.h3.text} {name.h4.text}")
     counter += 1
+
+""" extra notes: if you check the page, we can also scrape the episode the character died, time of death etc. """ 
