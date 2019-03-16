@@ -1,0 +1,197 @@
+death_number,name,cause_of_death,died_in_season,died_in_episode_title,died_in_episode_number
+1,Waymar Royce,Killed by White Walker,Season 1,Winter is Coming ,Episode 1
+2,Gared,Killed by White Walker,Season 1,Winter is Coming ,Episode 1
+3,Will,Executed by Ned Stark,Season 1,Winter is Coming ,Episode 1
+4,Jon Arryn,Poisoned by Lysa,Season 1,Winter is Coming ,Episode 1
+5,Assassin,Killed by Bran's Wolf,Season 1,The Kingsroad ,Episode 2
+6,Mycah,Killed by the Hound,Season 1,The Kingsroad ,Episode 2
+7,Ser Hugh,Killed by the Mountain,Season 1,"Cripples, Bastards and Broken Things ",Episode 4
+8,Kurleket,Killed by hill tribesmen,Season 1,The Wolf and the Lion ,Episode 5
+9,Willis Wode,Killed by hill tribesmen,Season 1,The Wolf and the Lion ,Episode 5
+10,Wyl,Killed by Lannister guardsmen,Season 1,The Wolf and the Lion ,Episode 5
+11,Heward,Killed by Lannister guardsmen,Season 1,The Wolf and the Lion ,Episode 5
+12,Jory Cassel,Killed by Jamie Lannister,Season 1,The Wolf and the Lion ,Episode 5
+13,Wallen,Killed by Rob Stark,Season 1,A Golden Crown ,Episode 6
+14,Stiv,Kill by Theon Greyjoy,Season 1,A Golden Crown ,Episode 6
+15,Vardis Egen,Killed by Bronn,Season 1,A Golden Crown ,Episode 6
+16,Viserys Targaryen ,Killed by Khal Drogo,Season 1,A Golden Crown ,Episode 6
+17,Wine seller,Dragged behind a Horse,Season 1,You Win or You Die ,Episode 7
+18,Robert Baratheon,Killed by a boar,Season 1,You Win or You Die ,Episode 7
+19,Vayon Poole,Killed by House Lannister men,Season 1,The Pointy End ,Episode 8
+20,Mordane,Killed by House Lannister men,Season 1,The Pointy End ,Episode 8
+21,Syrio Forel,Killed by House Lannister men,Season 1,The Pointy End ,Episode 8
+22,Stableboy,Killed by Arya,Season 1,The Pointy End ,Episode 8
+23,Mago,Killed by Khal Drogo,Season 1,The Pointy End ,Episode 8
+24,Othor,Burned by Jon Snow,Season 1,The Pointy End ,Episode 8
+25,Qotho,Killed by Jorah Mormont,Season 1,Baelor ,Episode 9
+26,Eddard Stark,Executed by Ilyn Payne,Season 1,Baelor ,Episode 9
+27,Khal Drogo,Smothered by Daenerys,Season 1,Fire and Blood ,Episode 10
+28,Mirri Maz Duur,Burned alive by by Daenerys,Season 1,Fire and Blood ,Episode 10
+29,Maester Cressen,Suicide by poison,Season 2,The North Remembers ,Episode 1
+30,Barra,killed by Janos Slynt,Season 2,The North Remembers ,Episode 1
+31,Rakharo,Killed by Dothrakis,Season 2,The Night Lands ,Episode 2
+32,Yoren,killed by Amory Lorch,Season 2,What is Dead May Never Die ,Episode 3
+33,Lommy,Killed by Polliver,Season 2,What is Dead May Never Die ,Episode 3
+34,Rennick,killed by Robb Stark's wolf,Season 2,Garden of Bones ,Episode 4
+35,Lannister guardsmen,killed by Robb Stark's wolf,Season 2,Garden of Bones ,Episode 4
+36,Tortured Prisoner,Tortured to death ,Season 2,Garden of Bones ,Episode 4
+37,Renly Baratheon,Killed by shadow creature,Season 2,The Ghost of Harrenhal ,Episode 5
+38,Emmon Cuy,killed by Brienne of Tarth,Season 2,The Ghost of Harrenhal ,Episode 5
+39,Robar Royce,killed by Brienne of Tarth,Season 2,The Ghost of Harrenhal ,Episode 5
+40,The Tickler,Killed by Jaqen H'ghar,Season 2,The Ghost of Harrenhal ,Episode 5
+41,Rodrik Cassel,Killed by Theon Greyjoy ,Season 2,The Old Gods and the New ,Episode 6
+42,The High Septon,Killed by rioters,Season 2,The Old Gods and the New ,Episode 6
+43,Armory Lorch,Killed by Jagen H'ghar,Season 2,The Old Gods and the New ,Episode 6
+44,Drennan ,Killed by Osha,Season 2,The Old Gods and the New ,Episode 6
+45,Irri,Killed by Xaro Xhoan Daxos,Season 2,The Old Gods and the New ,Episode 6
+46,Alton Lannister,Killed by Jamie Lannister,Season 2,A Man Without Honor ,Episode 7
+47,Torrhen Karstark,Killed by Jamie Lannister,Season 2,A Man Without Honor ,Episode 7
+48,Eleven of the Thirteen,Killed by Pyat Pree,Season 2,A Man Without Honor ,Episode 7
+49,Billy,Killed by Theon Greyjoy,Season 2,A Man Without Honor ,Episode 7
+50,Jack,Killed by Theon Greyjoy,Season 2,A Man Without Honor ,Episode 7
+51,Stonesnake,killed by wildlings,Season 2,The Prince of Winterfell ,Episode 8
+52,Harker,killed by wildlings,Season 2,The Prince of Winterfell ,Episode 8
+53,Borba ,killed by wildlings,Season 2,The Prince of Winterfell ,Episode 8
+54,Matthos Seaworth,killed by Wildfire explosion,Season 2,Blackwater ,Episode 9
+55,Mandon Moore,killed by Podrik,Season 2,Blackwater ,Episode 9
+56,Tom,killed by Brienne of Tarth,Season 2,Valar Morghulis ,Episode 10
+57,Maester Luwin,Killed by Dagmer,Season 2,Valar Morghulis ,Episode 10
+58,Pyat Pree,Killed by Daenerys' dragons,Season 2,Valar Morghulis ,Episode 10
+59,Qhorin,Killed by Jon Snow,Season 2,Valar Morghulis ,Episode 10
+60,Doreah,Locked in Xaro Xhoan Daxos' vault,Season 2,Valar Morghulis ,Episode 10
+61,Xaro Xhoan Daxos,Locked in his vault,Season 2,Valar Morghulis ,Episode 10
+62,Hoster Tully,Old age,Season 3,"Dark Wings, Dark Words ",Episode 2
+63,Master Torturer,Killed by Ramsay Snow,Season 3,Walk of Punishment ,Episode 3
+64,Bannen,Died of a broken foot and being starved,Season 3,And Now His Watch is Ended ,Episode 4
+65,Caster,killed by Karl Tanner,Season 3,And Now His Watch is Ended ,Episode 4
+66,Jeor Mormont,killed by Rast,Season 3,And Now His Watch is Ended ,Episode 4
+67,Kraznys mo Nakloz,Killed by dragon,Season 3,And Now His Watch is Ended ,Episode 4
+68,Willen Lannister,killed by Richard Karstark,Season 3,Kissed by Fire ,Episode 5
+69,Martyn Lannister,killed by Richard Karstark,Season 3,Kissed by Fire ,Episode 5
+70,Richard Karstark,Executed by Robb Stark,Season 3,Kissed by Fire ,Episode 5
+71,Ros,killed by Joffrey,Season 3,The Climb ,Episode 6
+72,Mero,Killed by Daario Naharis,Season 3,Second Sons ,Episode 8
+73,Prendahl na Ghezn,Killed by Daario Naharis,Season 3,Second Sons ,Episode 8
+74,White Walker,White Walker,Season 3,Second Sons ,Episode 8
+75,Old Man,Killed by Ygritte,Season 3,The Rains of Castamere ,Episode 9
+76,Orell,Killed by Jon Snow,Season 3,The Rains of Castamere ,Episode 9
+77,Talisa Stark,killed by Lorthar Frey,Season 3,The Rains of Castamere ,Episode 9
+78,Robb Stark,Killed by Roose Bolton,Season 3,The Rains of Castamere ,Episode 9
+79,Joyeuse Erenford,killed by Catelyn Stark,Season 3,The Rains of Castamere ,Episode 9
+80,Catelyn Stark,Killed by Walder Rivers,Season 3,The Rains of Castamere ,Episode 9
+81,Frey Soldier,Killed by Arya Stark,Season 3,Mhysa ,Episode 10
+82,lowell,Killed by the Hound,Season 4,Two Swords ,Episode 1
+83,Polliver,Killed by Arya Stark,Season 4,Two Swords ,Episode 1
+84,Tansy,Killed by Ramsey's Dogs,Season 4,The Lion and the Rose ,Episode 2
+85,Axell Florent,Burned alive by Melisandre,Season 4,The Lion and the Rose ,Episode 2
+86,Joffrey Baratheon,Poisoned by Olenna Tyrell,Season 4,The Lion and the Rose ,Episode 2
+87,Dontos Hollar,killed by Petyr Baelish's men,Season 4,Breaker of Chains ,Episode 3
+88,Guymon,Killed by Ygritte,Season 4,Breaker of Chains ,Episode 3
+89,Olly's Mother,Killed by Styr,Season 4,Breaker of Chains ,Episode 3
+90,Oznak zo Pahl,Killed by Daario Naharis,Season 4,Breaker of Chains ,Episode 3
+91,Great Master,killed slaves in uprising,Season 4,Oathkeeper ,Episode 4
+92,Locke, Killed Bran Stark while warging into Hodor,Season 4,First of His Name ,Episode 5
+93,Karl Tanner,Killed by Jon Snow,Season 4,First of His Name ,Episode 5
+94,Rast,Killed by Jon Snow's wolf,Season 4,First of His Name ,Episode 5
+95,Dying Man,Mercy killed by the Hound,Season 4,Mockingbird ,Episode 7
+96,Biter,Killed by the Hound,Season 4,Mockingbird ,Episode 7
+97,Rorge,Killed by Arya Stark,Season 4,Mockingbird ,Episode 7
+98,Lysa Arryn,Pushed through the moon door by Littlefinger,Season 4,Mockingbird ,Episode 7
+99,Mole's Town whore,Killed by Ygritte,Season 4,The Mountain and the Viper ,Episode 8
+100,Ralf Kenning,killed by Adrack Humble,Season 4,The Mountain and the Viper ,Episode 8
+101,Adrack Humble,Killed by Ramsay Snow's men,Season 4,The Mountain and the Viper ,Episode 8
+102,Oberyn Martell,Killed by the Mountain,Season 4,The Mountain and the Viper ,Episode 8
+103,Pypar,Killed by Ygritte,Season 4,The Watchers on the Wall ,Episode 9
+104,Thenn warg,Killed by Samwell Tarly,Season 4,The Watchers on the Wall ,Episode 9
+105,Dongo,killed by Black Brothers,Season 4,The Watchers on the Wall ,Episode 9
+106,Smitty,Fell of the wall,Season 4,The Watchers on the Wall ,Episode 9
+107,Styr,Killed by Jon Snow,Season 4,The Watchers on the Wall ,Episode 9
+108,Ygritte,Killed by Olly,Season 4,The Watchers on the Wall ,Episode 9
+109,Mag Mar Tun Doh Weg,killed by Grenn and 5 other black brothers,Season 4,The Watchers on the Wall ,Episode 9
+110,Grenn,Killed by Mag Mar Tun Doh Weg,Season 4,The Watchers on the Wall ,Episode 9
+111,Cooper,Killed by Mag Mar Tun Doh Weg,Season 4,The Watchers on the Wall ,Episode 9
+112,Done Hill,Killed by Mag Mar Tun Doh Weg,Season 4,The Watchers on the Wall ,Episode 9
+113,Zalla,killed by Dragon,Season 4,The Children ,Episode 10
+114,Jojen Reed,Killed by wight,Season 4,The Children ,Episode 10
+115,Shae,Killed by Tyrion Lannister,Season 4,The Children ,Episode 10
+116,Tywin Lannister,killed by Tyrion Lannister,Season 4,The Children ,Episode 10
+117,White Rat,Killed by a member of the Sons of the Harpy,Season 5,The Wars to Come ,Episode 1
+118,Mance Rayder,Mercy killed by Jon Snow,Season 5,The Wars to Come ,Episode 1
+119,Son of Harpy,Killed by Mossador,Season 5,The House of Black and White ,Episode 2
+120,Mossador,Executed by Daario Naharis,Season 5,The House of Black and White ,Episode 2
+121,Janos Slynt,Executed by Jon Snow,Season 5,High Sparrow ,Episode 3
+122,Lead Dornish guard,Killed by Bronn,Season 5,Sons of the Harpy ,Episode 4
+123,Merchant captain,Killed by Obara Sand,Season 5,Sons of the Harpy ,Episode 4
+124,Ser Barristan Selmy,Killed by Sons of Harpy,Season 5,Sons of the Harpy ,Episode 4
+125,Great Master,Killed by dragon,Season 5,Kill the Boy ,Episode 5
+126,Ghita,Posioned with water from House of Black and White by Arya ,Season 5,"Unbowed, Unbent, Unbroken ",Episode 6
+127,Master Aemon,Died of natural causes,Season 5,The Gift ,Episode 7
+128,Old Woman,Killed by Ramsay Bolton,Season 5,The Gift ,Episode 7
+129,Lord of Bones,killed by Tormund,Season 5,Hardhome ,Episode 8
+130,Loboda,Killed by White Walker,Season 5,Hardhome ,Episode 8
+131,White Walker,killed by Jon Snow,Season 5,Hardhome ,Episode 8
+132,Karsi,Killed by a pack of child-wights,Season 5,Hardhome ,Episode 8
+133,Shrine Baratheon,Burned alive as a sacrifice by Melisandre,Season 5,The Dance of Dragons ,Episode 9
+134,Hizdahr zo Loraq,Killed by son of Harpy,Season 5,The Dance of Dragons ,Episode 9
+135,Selyse Baratheon,Suicide by hanging,Season 5,Mother's Mercy ,Episode 10
+136,Stannis Baratheon,Killed by Brienne of Tarth,Season 5,Mother's Mercy ,Episode 10
+137,Myranda,Killed by Theon Greyjoy,Season 5,Mother's Mercy ,Episode 10
+138,Meryn Trant,Killed by Arya Stark,Season 5,Mother's Mercy ,Episode 10
+139,Myrcella Baratheon,poisoned by Ellaria Sand ,Season 5,Mother's Mercy ,Episode 10
+140,Jon Snow,Killed by Black brothers (Later Resurrected),Season 5,Mother's Mercy ,Episode 10
+141,Bolton officer,Killed by Brienne of Tarth,Season 6,The Red Woman ,Episode 1
+142,Areo Hotah,Stabbed in the back by Tyene Sand,Season 6,The Red Woman ,Episode 1
+143,Doran Martell,killed by Ellaria Sand,Season 6,The Red Woman ,Episode 1
+144,Master Caleotte,killed by Tyene Sand,Season 6,The Red Woman ,Episode 1
+145,Trystane Martell,killed by Obara Sand,Season 6,The Red Woman ,Episode 1
+146,King's Landing boaster,Killed by The Mountain,Season 6,Home ,Episode 2
+147,Roose Bolton,Killed by Ramsay Bolton,Season 6,Home ,Episode 2
+148,Walda Bolton,Killed by Ramsay Bolton,Season 6,Home ,Episode 2
+149,Newborn Bolton,Killed by Ramsay Bolton,Season 6,Home ,Episode 2
+150,Balon Greyjoy,Thrown from a bridge by Euron Greyjoy,Season 6,Home ,Episode 2
+151,Gerold Hightower,killed by Ned Stark,Season 6,Oathbreaker ,Episode 3
+152,Arthur Dayne,killed by Ned Stark,Season 6,Oathbreaker ,Episode 3
+153,Jon Umber,Died during the War of the Five Kings,Season 6,Oathbreaker ,Episode 3
+154,Bowen Marsh,Executed by Jon Snow,Season 6,Oathbreaker ,Episode 3
+155,Othell Yarwyck,Executed by Jon Snow,Season 6,Oathbreaker ,Episode 3
+156,Alliser Thorne,Executed by Jon Snow,Season 6,Oathbreaker ,Episode 3
+157,Olly,Executed by Jon Snow,Season 6,Oathbreaker ,Episode 3
+158,Iggo,killed by Daario Naharis,Season 6,Book of the Stranger ,Episode 4
+159,Akho,killed by Daario Naharis,Season 6,Book of the Stranger ,Episode 4
+160,Osha,killed by Ramsay Bolton,Season 6,Book of the Stranger ,Episode 4
+161,Moro and 9 other Khals,Burned alive by Daenery,Season 6,Book of the Stranger ,Episode 4
+162,White Walker,killed by Meera Reed,Season 6,The Door ,Episode 5
+163,Three-eyed raven,killed by the Night King,Season 6,The Door ,Episode 5
+164,Leaf,suicide by activating an explosive device taking out wights,Season 6,The Door ,Episode 5
+165,Hodor,Torn apart by wights,Season 6,The Door ,Episode 5
+166,Aerys Targaryen,Killed by Jaime Lannister,Season 6,Blood of My Blood ,Episode 6
+167,Maege Mormont,Died during the War of the Five Kings,Season 6,The Broken Man ,Episode 7
+168,Brother Ray & villagers,killed by rogue members of the Brotherhood Without Banners,Season 6,The Broken Man ,Episode 7
+169,Steve,killed by Sandor Clegane,Season 6,No One ,Episode 8
+170,Riddell,killed by Sandor Clegane,Season 6,No One ,Episode 8
+171,Morgan,killed by Sandor Clegane,Season 6,No One ,Episode 8
+172,Gatins,killed by Sandor Clegane,Season 6,No One ,Episode 8
+173,Faith Militant,killed by The Mountain,Season 6,No One ,Episode 8
+174,Brynden Tully,killed by Lannister soldier,Season 6,No One ,Episode 8
+175,Outlaw,killed by Sandor Clegane,Season 6,No One ,Episode 8
+176,Lem Lemoncloak,killed by Sandor Clegane,Season 6,No One ,Episode 8
+177,Outlaw,Hung by Brotherhood Without Banners,Season 6,No One ,Episode 8
+178,Lady Crane,Killed by the Waif ,Season 6,No One ,Episode 8
+179,The Waif ,Kill by Arya Stark,Season 6,No One ,Episode 8
+180,Belicho Paenymion,killed by Grey Worm,Season 6,Battle of the Bastards ,Episode 9
+181,Razdal mo Eraz,killed by Grey Worm,Season 6,Battle of the Bastards ,Episode 9
+182,Rickon Stark,Shot with an Arrow fired by Ramsay Bolton,Season 6,Battle of the Bastards ,Episode 9
+183,Smalljon Umber,killed by Tormund,Season 6,Battle of the Bastards ,Episode 9
+184,Wun Weg Wun Dar Wun,Shot with an Arrow fired by Ramsay Bolton,Season 6,Battle of the Bastards ,Episode 9
+185,Ramsay Bolton,Eaten alive by his own dogs,Season 6,Battle of the Bastards ,Episode 9
+186,Grand Maester Pycelle,killed by kids,Season 6,The Winds of Winter ,Episode 10
+187,Lancel Lannister,killed by wildfire,Season 6,The Winds of Winter ,Episode 10
+188,High Sparrow,killed by wildfire,Season 6,The Winds of Winter ,Episode 10
+189,Margaery Tyrell,killed by wildfire,Season 6,The Winds of Winter ,Episode 10
+190,Loras Tyrell,killed by wildfire,Season 6,The Winds of Winter ,Episode 10
+191,Mace Tyrell,killed by wildfire,Season 6,The Winds of Winter ,Episode 10
+192,Kevan Lannister,killed by wild fire,Season 6,The Winds of Winter ,Episode 10
+193,Tommen Baratheon,Suicide by juming out a window,Season 6,The Winds of Winter ,Episode 10
+194,Walder Rivers,killed by Arya Star,Season 6,The Winds of Winter ,Episode 10
+195,Lothar Frey,killed by Arya Star,Season 6,The Winds of Winter ,Episode 10
+196,Walder Frey,killed by Arya Stark,Season 6,The Winds of Winter ,Episode 10

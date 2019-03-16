@@ -2,6 +2,7 @@ from requests import get
 from requests.exceptions import RequestException
 from contextlib import closing
 from bs4 import BeautifulSoup
+import pandas as pd
 
 def simple_get(url):
     """
@@ -47,11 +48,34 @@ html = BeautifulSoup(raw_html, 'html.parser')  # Parse it with BS4
 #      print(str(counter) +' ' +name.text)
 #      counter += 1
 
-counter = 0
-for name in html.find_all("div", {"class" : "death-right"}):
-    """In the div class 'death-right', we print the h3, which contains the name.
-        h4 contains how he died, we want that too"""
-    print(f"{counter}: {name.h3.text} {name.h4.text}")
-    counter += 1
+data = []
+
+counter = 0  # Counter to see the deathcount
+for episode in html.find_all("div", {"class" : "episode-container"}):  # For each episode
+    episode_info = episode.find("h3", {"class" : "episode-title"})  # Retrieve the episode info (season, title, episode number)
+    episode_info_list = []  # initialize empty list to add individual episode info to
+
+    for item in episode_info:  # For each item (season, episode-title, episode-number)
+        episode_info_list.append(item.text)  # Append to the list
+        # [0] = Season
+        # [1] = episode-title
+        # [2] = episode-number
+
+    for name in episode.find_all("div", {"class" : "death-right"}):  # For each name that occurs in the episode
+        counter += 1  # Start counting !
+        #print(f"{counter}: {name.h3.text} {name.h4.text} in {episode_info_list}.")  # Print the deathcount, character name, how he died, and in what season/episode
+
+        # Create a list of dicts with the information of each characters deaths
+        data.append({'death_number' : counter
+                    ,'name' : name.h3.text
+                    ,'cause_of_death' : name.h4.text
+                    ,'died_in_season' : episode_info_list[0]
+                    ,'died_in_episode_title' : episode_info_list[1]
+                    ,'died_in_episode_number' : episode_info_list[2]})
+
+df = pd.DataFrame(data)  # Make a pandas DataFrame from the list of dicts
+column_order = ['death_number', 'name', 'cause_of_death', 'died_in_season', 'died_in_episode_title', 'died_in_episode_number']
+df = df[column_order]
+df.to_csv('deathlist.csv', index=False)  # Write to CSV
 
 """ extra notes: if you check the page, we can also scrape the episode the character died, time of death etc. """ 
