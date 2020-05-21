@@ -3,8 +3,8 @@ import smtplib
 
 def errormail(subject='default', msg='empty error message sent'):
 	from_email = 'error.imagine.ds@gmail.com'
-	to_email_list = ['hpf.vanheijst@gmail.com', 'mauricerichard91@gmail.com']
-	key = 'undying with analyst lucy'
+	to_email_list = ['@gmail.com', '@gmail.com']
+	key = 
 
 	server = smtplib.SMTP('smtp.gmail.com', 587)
 	server.starttls()
