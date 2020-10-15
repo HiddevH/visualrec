@@ -24,9 +24,9 @@ mail = Mail()
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config["MAIL_PORT"] = 465
 app.config["MAIL_USE_SSL"] = True
-app.config["MAIL_USERNAME"] = 'imagine.datascience@gmail.com'
-app.config["MAIL_PASSWORD"] = 'mauriceisstom'
-mail.init_app(app)
+app.config["MAIL_USERNAME"] = ''
+app.config["MAIL_PASSWORD"] = ''
+#mail.init_app(app)
 
 def allowed_file(filename): # Check of file-extension toegestaan is
     return '.' in filename and \
